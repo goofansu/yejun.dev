@@ -1,0 +1,23 @@
+baseURL = "https://yejun.dev/"
+title = "Yejun Su"
+copyright = "&copy; 2025 Yejun Su"
+
+disableKinds = ["taxonomy", "term"]
+enableRobotsTXT = true
+
+[module]
+  [[module.imports]]
+    path = "github.com/goofansu/hugo-modus"
+
+[params]
+description = "I'm Yejun, a programmer who loves plain text and literate programming. I use Emacs and Ruby in daily work."
+
+[markup]
+  [markup.highlight]
+  noClasses = false
+
+[menus]
+  [[menus.main]]
+    name = "Now"
+    pageRef = "/now"
+    weight = 10
