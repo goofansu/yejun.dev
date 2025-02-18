@@ -1,7 +1,7 @@
 .PHONY: dev prod local remote
 
 dev: local
-	hugo server --disableFastRender --navigateToChanged
+	hugo server --disableFastRender --navigateToChanged --buildDrafts
 
 prod: remote
 	hugo mod get -u
