@@ -21,3 +21,7 @@ description = "I'm Yejun, a programmer who loves plain text and literate program
     name = "Now"
     pageRef = "/now"
     weight = 10
+
+[services]
+  [services.rss]
+    limit = 30
