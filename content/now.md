@@ -1,7 +1,7 @@
 ---
 title: "Now"
 author: ["Yejun Su"]
-lastmod: 2025-02-17T10:22:00+08:00
+lastmod: 2025-03-05T22:26:43+08:00
 draft: false
 ---
 
@@ -10,17 +10,17 @@ This is my Now page inspired by <https://sive.rs/now>. You can find my Now profi
 
 ## Add link blog {#add-link-blog}
 
-Added [a new section](https://yejun.dev/links/) inspired by [Build a link blog](https://simonwillison.net/2025/Feb/4/build-a-link-blog/) by Simon Willison.
+Added [a new section](https://yejun.dev/links/) inspired by [My approach to running a link blog](https://simonwillison.net/2024/Dec/22/link-blog/).
 
 
 ## Redesigned blog {#redesigned-blog}
 
-I redesigned my blog with new styles during the Spring Festival. Also [a new section](/til/) was added inspired by <https://jvns.ca/til/>.
+I redesigned my blog with new styles during the Spring Festival. Also [a new section](/til/) was added inspired by [Julia Evans: TIL](https://jvns.ca/til/).
 
 
 ## Quit social media {#quit-social-media}
 
-I quit social media on 2024-10-21 after reading the [post](https://herman.bearblog.dev/quitting-social-media/) by Herman Martinus.
+I quit social media on 2024-10-21 after reading the [My first year without social media](https://herman.bearblog.dev/quitting-social-media/).
 
 
 ## Articles I like {#articles-i-like}

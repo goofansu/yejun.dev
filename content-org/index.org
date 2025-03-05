@@ -10,13 +10,13 @@
 This is my Now page inspired by https://sive.rs/now. You can find my Now profile on [[https://nownownow.com/p/Pbr4][nownownow.com]].
 
 ** Add link blog
-Added [[https://yejun.dev/links/][a new section]] inspired by [[https://simonwillison.net/2025/Feb/4/build-a-link-blog/][Build a link blog]] by Simon Willison.
+Added [[https://yejun.dev/links/][a new section]] inspired by [[https://simonwillison.net/2024/Dec/22/link-blog/][My approach to running a link blog]].
 
 ** Redesigned blog
-I redesigned my blog with new styles during the Spring Festival. Also [[/til/][a new section]] was added inspired by https://jvns.ca/til/.
+I redesigned my blog with new styles during the Spring Festival. Also [[/til/][a new section]] was added inspired by [[https://jvns.ca/til/][Julia Evans: TIL]].
 
 ** Quit social media
-I quit social media on 2024-10-21 after reading the [[https://herman.bearblog.dev/quitting-social-media/][post]] by Herman Martinus.
+I quit social media on 2024-10-21 after reading the [[https://herman.bearblog.dev/quitting-social-media/][My first year without social media]].
 
 ** Articles I like
 - [[https://economicsfromthetopdown.com/2024/02/17/nixing-technological-lock-in/][Nixing Technological Lock In]]
