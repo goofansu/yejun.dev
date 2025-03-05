@@ -219,7 +219,7 @@ Set `#+hugo_base_dir`, and that's the only necessary configuration:
 
 By default, `M-x org-hugo-export-to-md` exports the note to `~/src/yejun.dev/content/posts/20250304T171750--blogging-using-denote-and-hugo__blogging_denote_hugo.md`.
 
-Thanks to Denote's file-naming scheme, which creates URL-friendly names, I can export my [TILs](https://yejun.dev/til/) and [Links](https://yejun.dev/links/) using their original file names without this configuration.
+Thanks to Denote's file-naming scheme, which creates URL-friendly names, I can export my [TILs](https://yejun.dev/til/) and [Links](https://yejun.dev/links/) using their original file names.
 
 
 ### But I prefer a shorter file name {#but-i-prefer-a-shorter-file-name}
