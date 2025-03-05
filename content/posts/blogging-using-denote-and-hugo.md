@@ -326,7 +326,13 @@ Absolutely yes! Just loop `my/org-hugo-denote-files` and execute `org-hugo-expor
 
 ## Conclusion {#conclusion}
 
-Publishing notes directly to Hugo websites is efficient. By simply setting a different `#+hugo_base_dir`, I can easily publish to various sites, motivating me to write more. Emacs code used in this post can be found [here](https://github.com/goofansu/emacs-config/blob/main/modules/init-writing.el).
+-   I can publish any note to any Hugo website by setting `#+hugo_base_dir`.
+-   I can publish any note to any Hugo section by setting `#+hugo_base_section`.
+-   I can insert any file from my computer into any note using `denote-rename-file`.
+
+Together, these advantages create an efficient publishing workflow.
+
+PS: Emacs code used in this post can be found [here](https://github.com/goofansu/emacs-config/blob/main/modules/init-writing.el).
 
 [^fn:1]: `ox-hugo` by default copies files to `static/ox-hugo` directory, I changed the behaviour by customizing `org-hugo-default-static-subdirectory-for-externals` to `"attachments"`.
 [^fn:2]: `ox-hugo` supports exporting the front-matter in TOML (default) or YAML. I prefer YAML and have customized `org-hugo-front-matter-format` to use `"yaml"`.
