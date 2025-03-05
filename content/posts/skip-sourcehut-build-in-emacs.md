@@ -21,7 +21,7 @@ In Emacs, you can achieve this by [adding an infix argument](https://magit.vc/ma
 This inserts a new infix argument to toggle the `--push-option=skip-ci` argument
 after the infix argument that toggles `--dry-run` in `magit-push`.
 
-However, it is strange that neither agument `-o skip-ci` nor `-o=skip-ci` will
+However, it is strange that neither argument `-o skip-ci` nor `-o=skip-ci` will
 take effect:
 
 ```emacs-lisp

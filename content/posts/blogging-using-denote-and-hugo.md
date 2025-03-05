@@ -8,6 +8,8 @@ draft: false
 
 I've been thinking of writing a post about my current blogging workflow for quite some time. After reading [Blogging using Emacs Org Roam and Hugo](https://sourcery.zone/articles/20250226102455-blogging_using_emacs_org_roam_and_hugo/), I noticed we have a similar approach: we both use Nix, Hugo, and ox-hugo. The main difference is that my workflow is based on Denote instead of Org Roam.
 
+<!--more-->
+
 
 ## Denote {#denote}
 
@@ -23,7 +25,7 @@ My note-taking system is inspired by [Taking Notes With the Emacs Denote Package
 I save all attachments in the `attachments` directory alongside my notes, and I insert links using `[[file:]]` syntax rather than `denote-link`. The benefits are:
 
 -   Since most attachments are pictures, I can view them directly in an Org file using `org-toggle-inline-images`. They're also visible on GitHub.
--   Attachments in the form of `[[:file]]` are automatically copied to the `<HUGO_WEBSITE_ROOT_DIRECTORY>/static/attachments/`[^fn:1] directory, with no manual work needed.
+-   Attachments in the form of `[[file:]]` are automatically copied to the `<HUGO_WEBSITE>/static/attachments/`[^fn:1] directory, with no manual work needed.
 
 I use a function to insert attachments from any location on my computer to the current note by inserting a link if the attachment is already in the `attachments` directory, or renaming and moving the attachment to the `attachments` directory first, and then inserting a link.
 
@@ -100,10 +102,10 @@ I add an `denote-link-ol-export advice` to solve the problem:
                 (funcall orig-fun link description format))))
 ```
 
-Now the references use the `{{</* relref */>}}` shortcode, which is a Hugo feature to create relative links to documents:
+Now the references use the `relref` shortcode, which is a Hugo feature to create relative links to documents:
 
 ```markdown
-[Static website with Hugo and Nix]({{< relref "static-website-with-hugo-and-nix" >}})
+[Static website with Hugo and Nix]({{</* relref "static-website-with-hugo-and-nix" */>}})
 ```
 
 You can visit the article here: [Static website with Hugo and Nix]({{< relref "static-website-with-hugo-and-nix" >}}).
@@ -152,12 +154,12 @@ In `hugo.toml`, I import the theme using:
     path = "github.com/goofansu/hugo-modus"
 ```
 
-The [hugo-modus](https://github.com/goofansu/hugo-modus/) theme is created by myself specifically for this blog, using the excellent [Modus themes color palette](https://protesilaos.com/emacs/modus-themes-colors) that supports both light and dark modes.
+The [hugo-modus](https://github.com/goofansu/hugo-modus/) theme was created by myself specifically for this blog. It uses the [colour palette of the Modus themes](https://protesilaos.com/emacs/modus-themes-colors), and supports both light and dark modes.
 
 
-### Developing hugo-modus {#developing-hugo-modus}
+### Switching local and remote hugo-modus {#switching-local-and-remote-hugo-modus}
 
-Since I use hugo-modus for my blog and also work on its development, I often switch between the remote and local versions. I created a Makefile for efficient switching:
+Since I use hugo-modus for my blog and also work on its development, I often switch between the local and remote versions. I created a Makefile for efficient switching:
 
 ```makefile
 .PHONY: dev prod local remote
@@ -271,7 +273,7 @@ See [Transform ox-hugo anchors into links]({{< relref "20250204T004450--transfor
 
 ### Can I automatically export a note every time I save it? {#can-i-automatically-export-a-note-every-time-i-save-it}
 
-Sure. `ox-hugo` provides a guide on [Auto-export on Saving — ox-hugo - Org to Hugo exporter](https://ox-hugo.scripter.co/doc/auto-export-on-saving/). To enable auto exporting, simply add the following snippet at the bottom of the note:
+Sure. `ox-hugo` offers a [guide](https://ox-hugo.scripter.co/doc/auto-export-on-saving/) on automatically exporting when saving. Just add the following snippet at the end of the note:
 
 ```org
 * Footnotes
@@ -284,7 +286,7 @@ Sure. `ox-hugo` provides a guide on [Auto-export on Saving — ox-hugo - Org to 
 
 ### Can I search all Hugo-exportable notes? {#can-i-search-all-hugo-exportable-notes}
 
-Yes. The approach is simple - I just search (using `ripgrep`) through the Org files in my `denote-directory` for `#+hugo_base_dir`:
+Yes. The approach is simple - I just search `ripgrep` the Org files in my `denote-directory` for `#+hugo_base_dir`:
 
 ```emacs-lisp
 (defun my/org-hugo-denote-files ()
