@@ -200,7 +200,7 @@ I use [ox-hugo](https://ox-hugo.scripter.co/) to export Org-mode files to Markdo
 Using this post as an example, after creating the Org-mode note using the `denote` command, it contains the following content.
 
 ```org
-#+title:      Blogging with denote and ox-hugo
+#+title:      Blogging using Denote and Hugo
 #+date:       [2025-03-04 Tue 17:17]
 #+filetags:   :blogging:denote:hugo:
 #+identifier: 20250304T171750
