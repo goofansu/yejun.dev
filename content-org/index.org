@@ -9,6 +9,9 @@
 
 This is my Now page inspired by https://sive.rs/now. You can find my Now profile on [[https://nownownow.com/p/Pbr4][nownownow.com]].
 
+** Add Simple Analytics
+2025-03-14: Add Simple Analytics on the website and it's [[https://dashboard.simpleanalytics.com/yejun.dev][public]].
+
 ** Add link blog
 Added [[https://yejun.dev/links/][a new section]] inspired by [[https://simonwillison.net/2024/Dec/22/link-blog/][My approach to running a link blog]].
 

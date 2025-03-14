@@ -1,11 +1,16 @@
 ---
 title: "Now"
 author: ["Yejun Su"]
-lastmod: 2025-03-05T22:26:43+08:00
+lastmod: 2025-03-14T11:51:45+08:00
 draft: false
 ---
 
 This is my Now page inspired by <https://sive.rs/now>. You can find my Now profile on [nownownow.com](https://nownownow.com/p/Pbr4).
+
+
+## Add Simple Analytics {#add-simple-analytics}
+
+2025-03-14: Add Simple Analytics on the website and it's [public](https://dashboard.simpleanalytics.com/yejun.dev).
 
 
 ## Add link blog {#add-link-blog}
