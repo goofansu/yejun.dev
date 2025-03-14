@@ -2,7 +2,7 @@
 title: "Transform ox-hugo anchors to links"
 author: ["Yejun Su"]
 date: 2025-02-04T00:44:00+08:00
-tags: ["hugo"]
+tags: ["emacs", "hugo"]
 draft: false
 ---
 

@@ -268,7 +268,7 @@ By default, `ox-hugo` exports notes as `posts`, you can change the behaviour by:
     (setq org-hugo-default-section-directory "til")
     ```
 
-See [Transform ox-hugo anchors into links]({{< relref "20250204T004450--transform-ox-hugo-anchors-to-links__hugo.org" >}}) for an example.
+See [Transform ox-hugo anchors to links]({{< relref "20250204T004450--transform-ox-hugo-anchors-to-links__emacs_hugo.org" >}}) for an example.
 
 
 ### Can I automatically export a note every time I save it? {#can-i-automatically-export-a-note-every-time-i-save-it}
