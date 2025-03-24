@@ -10,11 +10,11 @@ enableRobotsTXT = true
     path = "github.com/goofansu/hugo-modus"
 
 [params]
-description = "I'm Yejun, a programmer who loves plain text and literate programming. I use Emacs and Ruby in daily work."
+  description = "I'm Yejun, a programmer who loves plain text and literate programming. I use Emacs and Ruby in daily work."
 
 [markup]
   [markup.highlight]
-  noClasses = false
+    noClasses = false
 
 [menus]
   [[menus.main]]
