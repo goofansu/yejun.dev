@@ -37,3 +37,5 @@ Command line option:
 ```shell
 uv tool install llm --python 3.12
 ```
+
+Update tools is as easy as `uv tool upgrade --all`.
