@@ -1,16 +1,14 @@
 ---
-title: "shot-scraper 1.6 with support for HTTP Archives"
+title: "shot-scraper CLI utility"
 author: ["Yejun Su"]
 date: 2025-02-14T12:15:00+08:00
-tags: ["python", "scraping"]
+tags: ["python", "scraping", "tool", "uv"]
 draft: false
 ---
 
-[shot-scraper 1.6 with support for HTTP Archives](https://simonwillison.net/2025/Feb/13/shot-scraper/#atom-everything)
-
 [shot-scraper](https://shot-scraper.datasette.io/en/stable/) is the second tool created by [Simon Willison](https://simonwillison.net/) that I've installed on my machine, the first being [llm](https://llm.datasette.io/en/stable/index.html).
 
-I install Python tools using [uv](<https://docs.astral.sh/uv/>).
+I install Python tools using [uv](https://docs.astral.sh/uv/).
 
 ```shell
 uv tool install shot-scraper

@@ -1,5 +1,5 @@
 ---
-title: "Multilingual support"
+title: "Multilingual export using ox-hugo"
 author: ["Yejun Su"]
 date: 2025-03-14T10:35:00+08:00
 tags: ["emacs", "hugo"]
