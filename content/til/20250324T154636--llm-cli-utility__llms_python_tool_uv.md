@@ -15,13 +15,13 @@ uv tool install llm
 Install [plugins](https://llm.datasette.io/en/stable/plugins/directory.html):
 
 ```shell
-llm install llm-mlx llm-ollama llm-openrouter llm-sentence-transformers llm-cmd llm-jq
+llm install llm-mlx llm-ollama llm-gemini llm-mistral llm-openrouter llm-sentence-transformers llm-cmd llm-jq
 ```
 
 Install `llm` with its plugins in one line (great to re-install the environment):
 
 ```shell
-uv tool install llm --with llm-mlx --with llm-ollama --with llm-openrouter --with llm-sentence-transformers --with llm-cmd --with llm-jq
+uv tool install llm --with llm-mlx --with llm-ollama --with llm-gemini --with llm-mistral --with llm-openrouter --with llm-sentence-transformers --with llm-cmd --with llm-jq
 ```
 
 `llm-mlx` requires Python 3.12 or lower, there are two ways to set Python version.
