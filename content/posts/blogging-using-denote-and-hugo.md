@@ -4,6 +4,7 @@ author: ["Yejun Su"]
 date: 2025-03-04T17:17:00+08:00
 tags: ["blogging", "denote", "hugo"]
 draft: false
+toc: true
 ---
 
 I've been thinking of writing a post about my current blogging workflow for quite some time. After reading [Blogging using Emacs Org Roam and Hugo](https://sourcery.zone/articles/20250226102455-blogging_using_emacs_org_roam_and_hugo/), I noticed we have a similar approach: we both use Nix, Hugo, and ox-hugo. The main difference is that my workflow is based on Denote instead of Org Roam.
