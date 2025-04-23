@@ -1,22 +1,8 @@
-.PHONY: dev prod local remote
+.PHONY: dev
 
-dev: local
-	hugo server --disableFastRender --navigateToChanged --buildDrafts
-
-prod: remote
-	hugo mod get -u
-	hugo mod tidy
-
-local:
-	@if ! grep -q "^replace" go.mod; then \
-		sed -i 's/^\/\/ replace/replace/' go.mod; \
-		echo "Switched to local modules"; \
-		hugo mod tidy; \
-	fi
-
-remote:
-	@if grep -q "^replace" go.mod; then \
-		sed -i 's/^replace/\/\/ replace/' go.mod; \
-		echo "Switched to remote modules"; \
-		hugo mod tidy; \
-	fi
+dev:
+	hugo server \
+		--buildDrafts \
+		--disableFastRender \
+		--navigateToChanged \
+		--printI18nWarnings

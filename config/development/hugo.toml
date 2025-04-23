@@ -1,0 +1,2 @@
+[module]
+  replacements = "github.com/goofansu/hugo-modus -> ../../hugo-modus"
