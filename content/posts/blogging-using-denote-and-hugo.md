@@ -114,7 +114,12 @@ You can visit the article here: [Static website with Hugo and Nix]({{< relref "s
 
 ## Hugo {#hugo}
 
-[Hugo](https://gohugo.io/) is a fast static site generator that's easy to install with just an executable binary. However, I use Nix for my development environment because I need `go` for Hugo Modules:
+[Hugo](https://gohugo.io/) is a fast static site generator that's easy to install with just an executable binary.
+
+
+### Nix {#nix}
+
+I use Nix for my development environment because I need `go` for [Hugo Modules](https://gohugo.io/hugo-modules/use-modules/):
 
 ```nix
 {
@@ -147,7 +152,22 @@ You can visit the article here: [Static website with Hugo and Nix]({{< relref "s
 }
 ```
 
-In `hugo.toml`, I import the theme using:
+
+### Theme {#theme}
+
+I created [hugo-modus](https://github.com/goofansu/hugo-modus/) theme specifically for this blog. It uses the [colour palette of the Modus themes](https://protesilaos.com/emacs/modus-themes-colors), and supports both light and dark modes.
+
+Since I use hugo-modus for my blog and also work on its development, I need to switch between the local and remote versions. Fortunately, Hugo supports split configuration by environment:
+
+```shell
+config/
+├── _default
+│   └── hugo.toml
+└── development
+    └── hugo.toml
+```
+
+In `config/_default/hugo.toml`, set the theme to be used in the production environment:
 
 ```toml
 [module]
@@ -155,42 +175,21 @@ In `hugo.toml`, I import the theme using:
     path = "github.com/goofansu/hugo-modus"
 ```
 
-The [hugo-modus](https://github.com/goofansu/hugo-modus/) theme was created by myself specifically for this blog. It uses the [colour palette of the Modus themes](https://protesilaos.com/emacs/modus-themes-colors), and supports both light and dark modes.
+In `config/development/hugo.toml`, override the theme to use the local hugo-modus directory:
 
-
-### Switching local and remote hugo-modus {#switching-local-and-remote-hugo-modus}
-
-Since I use hugo-modus for my blog and also work on its development, I often switch between the local and remote versions. I created a Makefile for efficient switching:
-
-```makefile
-.PHONY: dev prod local remote
-
-dev: local
-	hugo server --disableFastRender --navigateToChanged --buildDrafts
-
-prod: remote
-	hugo mod get -u
-	hugo mod tidy
-
-local:
-	@if ! grep -q "^replace" go.mod; then \
-		sed -i 's/^\/\/ replace/replace/' go.mod; \
-		echo "Switched to local modules"; \
-		hugo mod tidy; \
-	fi
-
-remote:
-	@if grep -q "^replace" go.mod; then \
-		sed -i 's/^replace/\/\/ replace/' go.mod; \
-		echo "Switched to remote modules"; \
-		hugo mod tidy; \
-	fi
+```toml
+[module]
+  replacements = "github.com/goofansu/hugo-modus -> ../../hugo-modus"
 ```
 
-Using `make dev` will apply the local `hugo-modus`, while `make prod` will update to the latest remote `hugo-modus`. The secret lies in `go.mod`. By default, it uses the local version, but when commented, it switches to the remote version:
+Check the active modules by running `hugo mod graph`:
 
-```go
-replace github.com/goofansu/hugo-modus => ../hugo-modus
+```shell
+> hugo mod graph -e development
+project ../../hugo-modus
+
+> hugo mod graph -e production
+github.com/goofansu/yejun.dev github.com/goofansu/hugo-modus@v0.0.0-20250423135050-b8cf9a1e9268
 ```
 
 
