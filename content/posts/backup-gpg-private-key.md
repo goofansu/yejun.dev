@@ -6,7 +6,7 @@ tags: ["security"]
 draft: false
 ---
 
-> [gpg-toolkit](<https://github.com/goofansu/gpg-toolkit>) is inspired by this article.
+> [gpg-toolkit](https://github.com/goofansu/gpg-toolkit) is inspired by this article.
 
 I'm using [GNU Privacy Guard](https://gnupg.org/) (GnuPG or GPG) in various
 ways, such as [encrypting passwords]({{< relref "simplify-totp-management-in-emacs" >}}), decrypting
