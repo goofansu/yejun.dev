@@ -32,13 +32,13 @@ There are more and more tools for prototyping, I found they are very useful when
 
 I build open source projects in my leisure time.
 
-** hugo-modus
-- An opinionated Hugo theme using Modus themes colors
-- URL: https://github.com/goofansu/hugo-modus/
+** Active
+- [[https://github.com/goofansu/hugo-modus/][hugo-modus]]: An opinionated Hugo theme using Modus themes colors
+- [[https://github.com/goofansu/ogp][ogp]]: The Open Graph protocol library in Elixir
 
-** ogp
-- The Open Graph protocol library in Elixir
-- Source: https://github.com/goofansu/ogp
+** Non-active
+
+- [[https://github.com/goofansu/locale_plug][locale_plug]]: Elixir plug to detect and set locale
 
 # Local Variables:
 # eval: (org-hugo-auto-export-mode)

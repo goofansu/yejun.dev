@@ -1,20 +1,19 @@
 ---
 title: "Projects"
 author: ["Yejun Su"]
-lastmod: 2025-07-26T23:29:30+08:00
+lastmod: 2025-07-26T23:42:46+08:00
 draft: false
 ---
 
 I build open source projects in my leisure time.
 
 
-## hugo-modus {#hugo-modus}
+## Active {#active}
 
--   An opinionated Hugo theme using Modus themes colors
--   URL: <https://github.com/goofansu/hugo-modus/>
+-   [hugo-modus](https://github.com/goofansu/hugo-modus/): An opinionated Hugo theme using Modus themes colors
+-   [ogp](https://github.com/goofansu/ogp): The Open Graph protocol library in Elixir
 
 
-## ogp {#ogp}
+## Non-active {#non-active}
 
--   The Open Graph protocol library in Elixir
--   Source: <https://github.com/goofansu/ogp>
+-   [locale_plug](https://github.com/goofansu/locale_plug): Elixir plug to detect and set locale
