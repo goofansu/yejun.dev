@@ -7,22 +7,6 @@
 :EXPORT_HUGO_AUTO_SET_LASTMOD: t
 :END:
 
-This is my Now page inspired by https://sive.rs/now. You can find my Now profile on [[https://nownownow.com/p/Pbr4][nownownow.com]].
+This page is inspired by [[https://sive.rs][Derek Sivers]]. You can find my profile on [[https://nownownow.com/p/Pbr4][nownownow.com]].
 
-** Add Simple Analytics
-2025-03-14: Add Simple Analytics on the website and it's [[https://dashboard.simpleanalytics.com/yejun.dev][public]].
-
-** Add link blog
-Added [[https://yejun.dev/links/][a new section]] inspired by [[https://simonwillison.net/2024/Dec/22/link-blog/][My approach to running a link blog]].
-
-** Redesigned blog
-I redesigned my blog with new styles during the Spring Festival. Also [[/til/][a new section]] was added inspired by [[https://jvns.ca/til/][Julia Evans: TIL]].
-
-** Quit social media
-I quit social media on 2024-10-21 after reading the [[https://herman.bearblog.dev/quitting-social-media/][My first year without social media]].
-
-** Articles I like
-- [[https://economicsfromthetopdown.com/2024/02/17/nixing-technological-lock-in/][Nixing Technological Lock In]]
-  :: Nix is an obvious answer for package management, but why did it not become popular until these years?
-- [[https://protesilaos.com/codelog/2024-04-24-re-what-keeps-you-emacs/][Re: what keeps you coming back to Emacs?]]
-  :: Emacs connects various command line tools, and Emacs Lisp is friendly to both beginners and veterans.
+Currently, I'm interested in agentic coding and rapid prototyping using AI.
