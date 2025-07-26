@@ -30,6 +30,8 @@ There are more and more tools for prototyping, I found they are very useful when
 :EXPORT_HUGO_AUTO_SET_LASTMOD: t
 :END:
 
+I build open source projects in my leisure time.
+
 ** hugo-modus
 - An opinionated Hugo theme using Modus themes colors
 - URL: https://github.com/goofansu/hugo-modus/

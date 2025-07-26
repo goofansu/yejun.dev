@@ -1,9 +1,12 @@
 ---
 title: "Projects"
 author: ["Yejun Su"]
-lastmod: 2025-07-26T22:13:26+08:00
+lastmod: 2025-07-26T23:29:30+08:00
 draft: false
 ---
+
+I build open source projects in my leisure time.
+
 
 ## hugo-modus {#hugo-modus}
 
