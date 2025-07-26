@@ -2,7 +2,7 @@
 title: "shot-scraper CLI utility"
 author: ["Yejun Su"]
 date: 2025-02-14T12:15:00+08:00
-tags: ["python", "scraping", "tool", "uv"]
+tags: ["python", "scraping"]
 draft: false
 ---
 

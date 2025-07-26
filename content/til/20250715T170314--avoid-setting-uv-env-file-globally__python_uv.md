@@ -2,7 +2,7 @@
 title: "Avoid setting UV_ENV_FILE globally"
 author: ["Yejun Su"]
 date: 2025-07-15T17:03:00+08:00
-tags: ["mcp", "python", "uv"]
+tags: ["python", "uv"]
 draft: false
 ---
 

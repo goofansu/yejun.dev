@@ -2,7 +2,7 @@
 title: "LLM CLI utility"
 author: ["Yejun Su"]
 date: 2025-03-24T15:46:00+08:00
-tags: ["llms", "python", "tool", "uv"]
+tags: ["llm", "python"]
 draft: false
 ---
 
