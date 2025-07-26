@@ -7,9 +7,21 @@
 :EXPORT_HUGO_AUTO_SET_LASTMOD: t
 :END:
 
-This page is inspired by [[https://sive.rs][Derek Sivers]]. You can find my profile on [[https://nownownow.com/p/Pbr4][nownownow.com]].
+(This page records my current work. It's inspired by [[https://sive.rs/now][Derek Sivers]].)
 
-Currently, I'm interested in agentic coding and rapid prototyping using AI.
+Currently, I'm interested in agentic coding and rapid prototyping.
+
+** Agentic coding
+
+Just finished [[/til/20250720t140631--claude-code-in-action__claude_course/][Claude Code in Action]] and started to learn [[https://www.anthropic.com/ai-fluency][AI Fluency]].
+
+I also learned a lot from these two videos, highly recommended:
+- [[https://www.youtube.com/watch?v=nfOVgz_omlU&list=PLFuLnrXSUqghHwwvXnsM6aCDFqCzuuPTH&index=1][Agentic Coding: The Future of Software Development with Agents]]
+- [[https://www.youtube.com/watch?v=XyQ4ZTS5dGw&list=PLFuLnrXSUqghHwwvXnsM6aCDFqCzuuPTH&index=2][Agentic Engineering in Action with Mitchell Hashimoto]]
+
+** Rapid prototyping
+
+There are more and more tools for prototyping, I found they are very useful when talking about things to be implemented. It's a must-have skill in the AI age.
 
 * Projects
 :PROPERTIES:

@@ -1,10 +1,25 @@
 ---
 title: "Now"
 author: ["Yejun Su"]
-lastmod: 2025-07-26T14:34:08+08:00
+lastmod: 2025-07-26T23:25:20+08:00
 draft: false
 ---
 
-This page is inspired by [Derek Sivers](https://sive.rs). You can find my profile on [nownownow.com](https://nownownow.com/p/Pbr4).
+(This page records my current work. It's inspired by [Derek Sivers](https://sive.rs/now).)
 
-Currently, I'm interested in agentic coding and rapid prototyping using AI.
+Currently, I'm interested in agentic coding and rapid prototyping.
+
+
+## Agentic coding {#agentic-coding}
+
+Just finished [Claude Code in Action](/til/20250720t140631--claude-code-in-action__claude_course/) and started to learn [AI Fluency](https://www.anthropic.com/ai-fluency).
+
+I also learned a lot from these two videos, highly recommended:
+
+-   [Agentic Coding: The Future of Software Development with Agents](https://www.youtube.com/watch?v=nfOVgz_omlU&list=PLFuLnrXSUqghHwwvXnsM6aCDFqCzuuPTH&index=1)
+-   [Agentic Engineering in Action with Mitchell Hashimoto](https://www.youtube.com/watch?v=XyQ4ZTS5dGw&list=PLFuLnrXSUqghHwwvXnsM6aCDFqCzuuPTH&index=2)
+
+
+## Rapid prototyping {#rapid-prototyping}
+
+There are more and more tools for prototyping, I found they are very useful when talking about things to be implemented. It's a must-have skill in the AI age.
