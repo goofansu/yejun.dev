@@ -1,4 +1,4 @@
-.PHONY: dev
+.PHONY: dev themes
 
 dev:
 	hugo server \
@@ -6,3 +6,6 @@ dev:
 		--disableFastRender \
 		--navigateToChanged \
 		--printI18nWarnings
+
+themes:
+	hugo mod get github.com/goofansu/hugo-modus
