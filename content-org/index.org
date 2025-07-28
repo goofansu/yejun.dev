@@ -30,14 +30,10 @@ There are more and more tools for prototyping, I found they are very useful when
 :EXPORT_HUGO_AUTO_SET_LASTMOD: t
 :END:
 
-I build open source projects in my leisure time.
+Projects are sorted by their initial commit time from newest to oldest:
 
-** Active
 - [[https://github.com/goofansu/hugo-modus/][hugo-modus]]: An opinionated Hugo theme using Modus themes colors
 - [[https://github.com/goofansu/ogp][ogp]]: The Open Graph protocol library in Elixir
-
-** Non-active
-
 - [[https://github.com/goofansu/locale_plug][locale_plug]]: Elixir plug to detect and set locale
 
 # Local Variables:
