@@ -6,7 +6,7 @@ tags: ["ai", "programming"]
 draft: false
 ---
 
-[Coding with LLMs in the summer of 2025 (an update) - &lt;antirez&gt;](https://antirez.com/news/154)
+[Coding with LLMs in the summer of 2025](https://antirez.com/news/154)
 
 > Always be part of the loop by moving code by hand from your terminal to the LLM web interface: this guarantees that you follow every process. You are still the coder, but augmented.
 
