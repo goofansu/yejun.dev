@@ -10,7 +10,7 @@ enableRobotsTXT = true
     path = "github.com/goofansu/hugo-modus"
 
 [params]
-  description = "I'm Yejun, a programmer who loves plain text and literate programming. I use Emacs and Ruby in daily work."
+  description = "I write all of my experiences in this blog."
 
 [markup]
   [markup.highlight]
@@ -18,13 +18,13 @@ enableRobotsTXT = true
 
 [menus]
   [[menus.main]]
-    name = "Now"
-    pageRef = "/now"
+    name = "About"
+    pageRef = "/about"
     weight = 10
 
   [[menus.main]]
-    name = "Projects"
-    pageRef = "/projects"
+    name = "Now"
+    pageRef = "/now"
     weight = 20
 
 [services]

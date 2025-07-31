@@ -1,7 +1,9 @@
 ---
-title: "Now"
+title: "What I'm doing now"
 author: ["Yejun Su"]
-lastmod: 2025-07-26T23:25:20+08:00
+date: 2025-07-31T11:38:00+08:00
+lastmod: 2025-07-31T11:44:20+08:00
+tags: ["profile"]
 draft: false
 ---
 
