@@ -1,4 +1,4 @@
 ---
 title: "Notes"
-description: "Notes that continuously evolve and expand."
+description: "Evergreen notes that grow and change overtime."
 ---

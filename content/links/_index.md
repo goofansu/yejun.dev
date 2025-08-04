@@ -1,4 +1,4 @@
 ---
 title: "Links"
-description: "Comments on links that I'm interested in."
+description: "Thoughts on links that catch my attention."
 ---
