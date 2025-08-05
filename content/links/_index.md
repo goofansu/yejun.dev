@@ -1,4 +1,4 @@
 ---
-title: "Links"
-description: "Thoughts on links that catch my attention."
+title: "Blogmark"
+description: "Quotes and comments on links."
 ---
