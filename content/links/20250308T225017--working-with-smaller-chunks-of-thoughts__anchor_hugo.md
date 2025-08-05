@@ -10,7 +10,11 @@ draft: false
 
 > If the section has a heading, then it's easy to make that linkable with a custom name. I can use `org-set-property` to set the `CUSTOM_ID` property to the anchor name.
 >
+> [...]
+>
 > If the part that I want to link to is not a heading, I can add an ID by using the `#+ATTR_HTML: :id` ... directive.
+>
+> [...]
 >
 > Text fragments are even more powerful, because I can link to a specific part of a paragraph. I can link to one segment with something like `#::text=text+to+highlight`. I can specify multiple text fragments to highlight by using `#::text=first+text+to+highlight&text=second+text`, and the browser will automatically scroll to the first highlighted section. I can specify a longer section by using `text=textStart,textEnd`.
 >
