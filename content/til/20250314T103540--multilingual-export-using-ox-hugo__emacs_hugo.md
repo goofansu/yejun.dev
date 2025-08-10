@@ -9,7 +9,7 @@ draft: false
 [Hugo-modus](https://github.com/goofansu/hugo-modus) supports multilingual now, it'll display translation links for multilingual posts. As I'm [blogging using Denote and Hugo]({{< relref "blogging-using-denote-and-hugo" >}}), I changed the `#+export_file_name` by appending the locale such as: `post-1.zh`, expecting it to export `post-1.zh.md` but failed. The complete configuration is as the following:
 
 ```org
-#+hugo_base_dir: ~/src/hugo-modus/exampleSite
+#+hugo_base_dir: ~/code/hugo-modus/exampleSite
 #+hugo_section: posts
 #+export_file_name: post-1.zh
 ```

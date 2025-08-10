@@ -18,7 +18,7 @@ lang: "zh"
 
 下面言归正传，让我们看一下如何使用 scientist。
 
-首先，引入 `Science` ，它提供了一些 DSL，使用 `science block` 可以很方便地定义实验：
+首先，引入 `Science` ，它提供了一些 DSL，使用 `science` 块可以很方便地定义实验：
 
 ```ruby
 class Query

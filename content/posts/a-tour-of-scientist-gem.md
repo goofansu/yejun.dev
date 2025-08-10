@@ -32,8 +32,7 @@ families, causing the duration increasing linearly with the families count.
 
 As the method returns ids only, after talking with my team leader, we decided to
 add a column to cache the ids of `valid_ordered_ancestors`, named
-`cached_valid_ordered_ancestors_ids`, and update it in the `after_touch`
-callback:
+`cached_valid_ordered_ancestors_ids`, and update it in the `after_touch` callback:
 
 ```ruby
 serialize :cached_valid_ordered_ancestors_ids, Array

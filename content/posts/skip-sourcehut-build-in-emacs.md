@@ -6,10 +6,9 @@ tags: ["emacs", "sourcehut"]
 draft: false
 ---
 
-[builds.sr.ht](https://builds.sr.ht/) is the GitHub Actions counterpart in sourcehut, it can run
-jobs when you push to a git repository that contains a `build.yml` file.
-According to the [manual](https://man.sr.ht/git.sr.ht/#push-options), you can skip submitting a build by using `git
-push -o skip-ci`.
+[builds.sr.ht](https://builds.sr.ht/) is the GitHub Actions counterpart in sourcehut, it can run jobs
+when you push to a git repository that contains a `build.yml` file. According to
+the [manual](https://man.sr.ht/git.sr.ht/#push-options), you can skip submitting a build by using `git push -o skip-ci`.
 
 In Emacs, you can achieve this by [adding an infix argument](https://magit.vc/manual/transient/Modifying-Existing-Transients.html):
 

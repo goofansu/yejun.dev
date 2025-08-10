@@ -214,10 +214,10 @@ The note is not Hugo-exportable at the moment.
 Set `#+hugo_base_dir`, and that's the only necessary configuration:
 
 ```org
-#+hugo_base_dir: ~/src/yejun.dev
+#+hugo_base_dir: ~/code/yejun.dev
 ```
 
-By default, `M-x org-hugo-export-to-md` exports the note to `~/src/yejun.dev/content/posts/20250304T171750--blogging-using-denote-and-hugo__blogging_denote_hugo.md`.
+By default, `M-x org-hugo-export-to-md` exports the note to `~/code/yejun.dev/content/posts/20250304T171750--blogging-using-denote-and-hugo__blogging_denote_hugo.md`.
 
 Thanks to Denote's file-naming scheme, which creates URL-friendly names, I can export my [TILs](https://yejun.dev/til/) and [Links](https://yejun.dev/links/) using their original file names.
 
@@ -230,7 +230,7 @@ Set `#+export_file_name` to define the name of the exported file:
 #+export_file_name: blogging-using-denote-and-hugo
 ```
 
-This time, `M-x org-hugo-export-to-md` exports the note to `~/src/yejun.dev/content/posts/blogging-using-denote-and-hugo.md`.
+This time, `M-x org-hugo-export-to-md` exports the note to `~/code/yejun.dev/content/posts/blogging-using-denote-and-hugo.md`.
 
 
 ### How does the Markdown file look? {#how-does-the-markdown-file-look}

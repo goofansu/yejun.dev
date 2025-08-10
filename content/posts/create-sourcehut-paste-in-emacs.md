@@ -28,8 +28,8 @@ utilizing [hut](https://git.sr.ht/~emersion/hut) to create a paste in Emacs:
 ```
 
 When calling the function, you will be prompted for a filename, by default,
-`buffer-name` is pre-filled for convenience. After creating the paste, the URL
-is copied to the clipboard.
+`buffer-name` is pre-filled for convenience. After creating the paste, the URL is
+copied to the clipboard.
 
 There are two advices on giving a filename:
 
@@ -37,5 +37,5 @@ There are two advices on giving a filename:
     meaningful filename makes search easier.
 -   Give a filename extension for code highlighting: see [this paste](https://paste.sr.ht/~goofansu/bd594323cc0036d413ab5afb70f5d50a2b195d33) for details.
 
-The default visiblity is `unlisted`, using `C-u` to create a `public` paste, for
+The default visiblity is `unlisted`, using `C-u` to create a public paste, for
 Doom Emacs users, that's `SPC u`.

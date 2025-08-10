@@ -31,9 +31,9 @@ let
 ```
 
 It appears that the input is also getting printed along with the result, which
-isn't expected. However, when I tried with `nix repl` in Kitty, I didn't
-encounter this problem. A viable solution that emerged is to send the Nix code
-from the org-babel source block directly to the Nix REPL in Kitty.
+isn't expected. However, when I tried with `nix repl` in Kitty, I didn't encounter
+this problem. A viable solution that emerged is to send the Nix code from the
+org-babel source block directly to the Nix REPL in Kitty.
 
 Thanks to the [Kitty's remote control](https://sw.kovidgoyal.net/kitty/overview/#remote-control), it's easy to advise the
 `+eval/send-region-to-repl` function to send the Nix code to Kitty:
@@ -63,10 +63,9 @@ Thanks to the [Kitty's remote control](https://sw.kovidgoyal.net/kitty/overview/
     ad-do-it))
 ```
 
-When calling the `+eval/send-region-to-repl` function (`SPC c s`), if current
-major mode is `org-mode` and the language of the org-babel source block is
-`nix`, it sends the selected code to Kitty's `nix-repl` tab, which runs the `nix
-repl` so that the code is evaluated in the Nix REPL. The tab will be created if
-not exist.
+When calling the `+eval/send-region-to-repl` function (`SPC c s`), if current major
+mode is `org-mode` and the language of the org-babel source block is `nix`, it sends
+the selected code to Kitty's `nix-repl` tab, which runs the `nix repl` so that the
+code is evaluated in the Nix REPL. The tab will be created if not exist.
 
 {{< figure src="/attachments/20250127T001947--kitty-nix-repl.gif" alt="Screencast of send nix code from Emacs to Kitty" >}}
