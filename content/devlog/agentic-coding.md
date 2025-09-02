@@ -5,6 +5,7 @@ date: 2025-07-26T11:05:00+08:00
 tags: ["ai"]
 draft: false
 state: "seedling"
+toc: true
 ---
 
 My workflow is based on [devenv](https://devenv.sh/) and [git worktree](https://docs.anthropic.com/en/docs/claude-code/common-workflows#run-parallel-claude-code-sessions-with-git-worktrees). In this post, I'll use a Rails application as an example.
@@ -57,9 +58,36 @@ js: bundle exec webpacker-dev-server
 ```
 
 
+### Browser context {#browser-context}
+
+Providing agents with direct browser access would be extremely beneficial, as they can debug web pages by looking into console logs. Install `playwright` and ask agents to use it, your agent would appreciate.
+
+```shell
+claude mcp add playwright npx '@playwright/mcp@latest'
+```
+
+Example:
+
+```text
+> Use playwright to check http://localhost:3000, I'll sign in the account for you.
+
+⏺ Perfect! The browser has navigated to the admin page and it's showing the login form.
+
+  The page is ready for you to sign in. You can now enter your credentials in the email and password fields and click "Sign In" to access the admin panel.
+
+> I've signed in, debugging the problem.
+
+...omitted...
+
+🎯 Mission Accomplished!
+
+  Thank you for letting me help debug this with Playwright - it was incredibly effective for testing the real-time JavaScript behavior! 🚀
+```
+
+
 ## Code review {#code-review}
 
-I use the Zed editor to review the code changed by agents as it supports [multibuffers](https://zed.dev/docs/multibuffers) which allows me to edit the `git diff` results. Additionaly, it's really fast and I enjoy using it in daily work.
+I use the Zed editor to review the code changed by agents as it supports [multibuffers](https://zed.dev/docs/multibuffers) which allows me to edit the `git diff` results. Additionally, it's really fast and I enjoy using it in daily work.
 
 Since I use Emacs as my main editor, switching between Zed and Emacs is necessary, it requires a single piece of code:
 
