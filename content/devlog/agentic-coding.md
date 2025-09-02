@@ -2,7 +2,7 @@
 title: "Agentic coding"
 author: ["Yejun Su"]
 date: 2025-07-26T11:05:00+08:00
-lastmod: 2025-09-02T12:04:58+08:00
+lastmod: 2025-09-02T12:15:45+08:00
 tags: ["ai"]
 draft: false
 toc: true
@@ -24,7 +24,7 @@ cd my_app
 git worktree add ../my_app-feature-xyz -b feature/xyz develop
 cd ../my_app-feature-xyz
 direnv allow
-dev
+bin/dev
 ```
 
 Tip: A fish-shell alias for quickly switching between git worktree directories:
@@ -43,7 +43,7 @@ Always truncate the `development.log` file[^fn:1] when starting the server to en
 
 #### `bin/dev` {#bin-dev}
 
-```shell
+```shell { hl_lines=["3"] }
 #!/usr/bin/env sh
 
 truncate -s 0 log/development.log
@@ -51,17 +51,9 @@ exec bundle exec foreman start -f Procfile.dev "$@"
 ```
 
 
-#### `Procfile.dev` {#procfile-dot-dev}
-
-```yaml
-web: bundle exec rails s -p 3000
-js: bundle exec webpacker-dev-server
-```
-
-
 ### Browser context {#browser-context}
 
-Providing agents with direct browser access would be extremely beneficial, as they can debug web pages by looking into console logs. Install `playwright` and ask agents to use it, your agent would appreciate.
+Providing agents with direct browser access would be extremely beneficial, as they can debug web pages by looking into console logs. Install `playwright` and ask agents to use it, your agent would appreciate it.
 
 ```shell
 claude mcp add playwright npx '@playwright/mcp@latest'
