@@ -2,10 +2,11 @@
 title: "Agentic coding"
 author: ["Yejun Su"]
 date: 2025-07-26T11:05:00+08:00
+lastmod: 2025-09-02T12:04:58+08:00
 tags: ["ai"]
 draft: false
-state: "seedling"
 toc: true
+state: "seedling"
 ---
 
 My workflow is based on [devenv](https://devenv.sh/) and [git worktree](https://docs.anthropic.com/en/docs/claude-code/common-workflows#run-parallel-claude-code-sessions-with-git-worktrees). In this post, I'll use a Rails application as an example.
