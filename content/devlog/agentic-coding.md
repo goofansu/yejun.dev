@@ -2,7 +2,7 @@
 title: "Agentic coding"
 author: ["Yejun Su"]
 date: 2025-07-26T11:05:00+08:00
-lastmod: 2025-09-02T12:15:45+08:00
+lastmod: 2025-09-29T17:52:18+08:00
 tags: ["ai"]
 draft: false
 toc: true
@@ -53,10 +53,17 @@ exec bundle exec foreman start -f Procfile.dev "$@"
 
 ### Browser context {#browser-context}
 
-Providing agents with direct browser access would be extremely beneficial, as they can debug web pages by looking into console logs. Install `playwright` and ask agents to use it, your agent would appreciate it.
+Providing agents with direct browser access would be extremely beneficial, as they can debug web pages by looking into console logs. Install `playwright` or `chrome-devtools` and ask agents to use it, your agent would appreciate it.
 
 ```shell
-claude mcp add playwright npx '@playwright/mcp@latest'
+claude mcp add playwright npx @playwright/mcp@latest
+claude mcp add chrome-devtools npx chrome-devtools-mcp@latest # require Node >= 22.12.0
+```
+
+And run in YOLO mode:
+
+```json
+claude --dangerously-skip-permissions
 ```
 
 Example:
