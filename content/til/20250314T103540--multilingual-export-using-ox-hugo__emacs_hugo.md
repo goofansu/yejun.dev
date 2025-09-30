@@ -14,4 +14,4 @@ draft: false
 #+export_file_name: post-1.zh
 ```
 
-Then I found there is already a [solution](https://github.com/kaushalmodi/ox-hugo/issues/157#issuecomment-385027369), which is as easy as appending `.md`, such as `#+export_file_name: post-1.zh.md`. The result is [on the example site](https://hugo-modus.vercel.app/zh/posts/post-1/).
+Then I found there is already a [solution](https://github.com/kaushalmodi/ox-hugo/issues/157#issuecomment-385027369), which is as easy as appending `.md`, such as `#+export_file_name: post-1.zh.md`. The result is [on the example site](https://hugo-modus.yejun.dev/zh/posts/post-1/).
