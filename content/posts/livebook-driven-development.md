@@ -6,8 +6,6 @@ tags: ["elixir", "livebook"]
 draft: false
 ---
 
-> This post was originally posted on [Medium](https://goofansu.medium.com/livebook-driven-development-50f82e66fbff).
-
 Last week I published [ogp](https://github.com/goofansu/ogp) which is a simple wrapper for Open Graph
 protocol. Coding is easy, I want to share the progress of developing it in
 Livebook.
