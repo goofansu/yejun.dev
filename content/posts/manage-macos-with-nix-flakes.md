@@ -4,9 +4,10 @@ author: ["Yejun Su"]
 date: 2023-10-19T11:10:00+08:00
 tags: ["macos", "nix"]
 draft: true
+toc: true
 ---
 
-🚧 This post is under construction. 🚧
+## Nix flakes {#nix-flakes}
 
 > A flake is a directory that contains a file named `flake.nix` in the root
 > directory. `flake.nix` specifies some metadata about the flake such as
@@ -19,10 +20,7 @@ draft: true
 >
 > -- [RFC 0049: Flakes](https://github.com/tweag/rfcs/blob/flakes/rfcs/0049-flakes.md#flakes)
 
-
-## Nix flakes {#nix-flakes}
-
-According to the definition, the structure of a flake is as simple as:
+According to the definition, a flake has two files:
 
 ```text
 .
@@ -47,13 +45,16 @@ A basic `flake.nix` is as simple as the following:
 }
 ```
 
+
+### Example {#example}
+
 Let's create a `flake-example` directory for the `flake.nix`, thus, the
 `flake-example` is called a flake. Run `nix build` in the flake for the first
 time:
 
 ```text
-~/flake-example> nix build
-error: flake 'path:/Users/james/flake-example' does not provide attribute 'packages.aarch64-darwin.default' or 'defaultPackage.aarch64-darwin'
+/tmp/flake-example> nix build
+error: flake 'path:/tmp/flake-example' does not provide attribute 'packages.aarch64-darwin.default' or 'defaultPackage.aarch64-darwin'
 ```
 
 The error means something is missing in the `outputs`, let's set the result to
@@ -72,10 +73,10 @@ The error means something is missing in the `outputs`, let's set the result to
 }
 ```
 
-Run `nix build` and another error rises:
+Run `nix build` again:
 
 ```text
-~/flake-example> nix build
+/tmp/flake-example> nix build
 error: flake output attribute 'packages.aarch64-darwin.default' is not a derivation or path
 ```
 
@@ -102,7 +103,7 @@ things simple, let's put it aside and set the output attribute to a Nix path:
 Run `nix build` and it is successful:
 
 ```text
-~/flake-example> tree
+/tmp/flake-example> tree
 .
 ├── flake.lock
 ├── flake.nix
@@ -113,7 +114,7 @@ The `result` symbolic link is the output of the build result, which is located
 in the `/nix/store` directory.
 
 ```bash
-~/flake-example> tree result
+/tmp/flake-example> tree result
 result
 ├── flake.lock
 └── flake.nix
