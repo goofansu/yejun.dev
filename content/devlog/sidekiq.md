@@ -2,7 +2,7 @@
 title: "Sidekiq"
 author: ["Yejun Su"]
 date: 2024-11-20T08:34:00+08:00
-lastmod: 2025-10-09T15:13:39+08:00
+lastmod: 2025-10-09T15:59:15+08:00
 tags: ["bib", "job", "ruby"]
 draft: false
 toc: true
@@ -130,7 +130,7 @@ end
 ```
 
 
-### Waiting time inreases according to retry count {#waiting-time-inreases-according-to-retry-count}
+### Retry intervals increase based on the number of retries {#retry-intervals-increase-based-on-the-number-of-retries}
 
 ```ruby
 delay = (count**4) + 15
