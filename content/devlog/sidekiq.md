@@ -2,8 +2,8 @@
 title: "Sidekiq"
 author: ["Yejun Su"]
 date: 2024-11-20T08:34:00+08:00
-lastmod: 2025-10-09T15:03:28+08:00
-tags: ["job", "ruby"]
+lastmod: 2025-10-09T15:13:39+08:00
+tags: ["bib", "job", "ruby"]
 draft: false
 toc: true
 state: "seedling"
