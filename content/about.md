@@ -6,13 +6,14 @@ tags: ["profile"]
 draft: false
 ---
 
-👋 I'm Yejun Su, a web developer. I use Emacs and Ruby for my daily work.
+👋 I'm Yejun Su, a web developer. I'm also on [GitHub](https://github.com/goofansu) and [Bluesky](https://bsky.app/profile/yejun.dev).
 
-I'm maintaining some open source projects:
 
--   [hugo-modus](https://github.com/goofansu/hugo-modus/): An opinionated Hugo theme using Modus themes colors
--   [ogp](https://github.com/goofansu/ogp): Elixir library for the Open Graph protocol
--   [locale_plug](https://github.com/goofansu/locale_plug): Elixir library to detect and set locale for web applications
--   [ueberauth_weixin](https://github.com/elixir-wechat/ueberauth_weixin): Elixir library to implement WeChat OAuth2 for Überauth
+## Projects {#projects}
 
-You can also find me on [GitHub](https://github.com/goofansu) and [Bluesky](https://bsky.app/profile/yejun.dev).
+See my "[projects]({{< relref "projects" >}})" page.
+
+
+## Tools I use {#tools-i-use}
+
+See my "[tools]({{< relref "tools" >}})" page.
