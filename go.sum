@@ -12,3 +12,5 @@ github.com/goofansu/hugo-modus v0.0.0-20251015163452-321b4231dbaf h1:svUJQSWHbZ5
 github.com/goofansu/hugo-modus v0.0.0-20251015163452-321b4231dbaf/go.mod h1:qzmhitcd7c3bZJIiVXeqaIid1d/K0tL0y7myMwyXY4g=
 github.com/goofansu/hugo-modus v0.0.0-20251015165146-d874193545d9 h1:saJqWk3hrQb6kJDMOy8u/jgUhICHf1bJ+aEyUvIKp9M=
 github.com/goofansu/hugo-modus v0.0.0-20251015165146-d874193545d9/go.mod h1:qzmhitcd7c3bZJIiVXeqaIid1d/K0tL0y7myMwyXY4g=
+github.com/goofansu/hugo-modus v0.0.0-20251015165643-b0eefde406a3 h1:e+GPFLB2JXKMFg4WXcJA87g5mIeN5xvkxYJ2fuA4PfE=
+github.com/goofansu/hugo-modus v0.0.0-20251015165643-b0eefde406a3/go.mod h1:qzmhitcd7c3bZJIiVXeqaIid1d/K0tL0y7myMwyXY4g=
