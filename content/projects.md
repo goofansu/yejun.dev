@@ -2,8 +2,8 @@
 title: "Projects"
 author: ["Yejun Su"]
 date: 2025-10-15T13:51:00+08:00
-lastmod: 2025-10-15T23:35:02+08:00
-tags: ["profile"]
+lastmod: 2025-10-16T11:45:14+08:00
+tags: ["personal"]
 draft: false
 ---
 

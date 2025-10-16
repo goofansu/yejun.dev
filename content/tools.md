@@ -2,8 +2,8 @@
 title: "Tools I use"
 author: ["Yejun Su"]
 date: 2025-10-15T12:45:00+08:00
-lastmod: 2025-10-15T22:05:48+08:00
-tags: ["profile"]
+lastmod: 2025-10-16T11:45:09+08:00
+tags: ["personal"]
 draft: false
 ---
 
