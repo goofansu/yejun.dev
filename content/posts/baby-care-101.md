@@ -4,7 +4,6 @@ author: ["Yejun Su"]
 date: 2014-10-13T00:00:00+08:00
 tags: ["baby", "healthcare"]
 draft: false
-lang: "zh"
 ---
 
 这些建议是月子中心的一位老医生给的，针对的是1～3个月大的宝贝。

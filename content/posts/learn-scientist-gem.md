@@ -4,7 +4,6 @@ author: ["Yejun Su"]
 date: 2022-03-31T00:00:00+08:00
 tags: ["ruby", "scientist"]
 draft: false
-lang: "zh"
 ---
 
 最近项目中的一个功能有性能问题，改进方案很简单，就是用缓存代替实时计算，但是缓存需要及时更新，不能返回错误的结果。

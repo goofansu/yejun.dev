@@ -4,7 +4,6 @@ author: ["Yejun Su"]
 date: 2023-10-06T00:00:00+08:00
 tags: ["healthcare", "tooth"]
 draft: false
-lang: "zh"
 ---
 
 国庆放假几天牙疼，昨天去家门口的牙科诊所拍了个牙片，不看不知道，一看吓一跳，原来是一颗智齿长歪了，把前面的牙顶坏了。
