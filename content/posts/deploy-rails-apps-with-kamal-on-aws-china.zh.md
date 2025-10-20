@@ -7,7 +7,7 @@ draft: false
 toc: true
 ---
 
-本文介绍了将 Rails 应用程序部署到 AWS 中国区的步骤。
+本文介绍了在 AWS 中国区使用 Kamal 部署 Rails 应用程序的步骤。
 
 
 ## 安装 Docker {#install-docker}
@@ -62,7 +62,7 @@ aws ecr get-login-password --region cn-northwest-1 | docker login --username AWS
 
 ### 从 ECR 拉取 kamal-proxy 镜像 {#pull-kamal-proxy-image-from-ecr}
 
-Kamal 使用 `basecamp/kamal-proxy` 镜像时没有指定镜像仓库名称，因此需要从我们的容器创建一个标签。
+Kamal 使用 `basecamp/kamal-proxy` 镜像时没有指定镜像仓库名称，因此需要在拉取后对镜像进行标记。
 
 ```shell
 docker pull <aws-ecr-registry>/basecamp/kamal-proxy:v0.9.0

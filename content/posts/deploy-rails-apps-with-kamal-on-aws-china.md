@@ -1,5 +1,5 @@
 ---
-title: "Kamal deploy on AWS China"
+title: "Deploy Rails apps with Kamal on AWS China"
 author: ["Yejun Su"]
 date: 2025-10-18T12:00:00+08:00
 tags: ["aws", "devops"]
@@ -7,7 +7,7 @@ draft: false
 toc: true
 ---
 
-This post describes the steps to deploy a Rails application to AWS China.
+This post describes the steps to deploy a Rails application with Kamal on AWS China.
 
 
 ## Install docker {#install-docker}
@@ -62,7 +62,7 @@ aws ecr get-login-password --region cn-northwest-1 | docker login --username AWS
 
 ### Pull kamal-proxy image from ECR {#pull-kamal-proxy-image-from-ecr}
 
-Kamal uses the `basecamp/kamal-proxy` image without specifying the registry name, so create a tag from our container.
+Kamal uses the `basecamp/kamal-proxy` image without specifying the registry name, so tag the image after pulling it.
 
 ```shell
 docker pull <aws-ecr-registry>/basecamp/kamal-proxy:v0.9.0
