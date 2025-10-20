@@ -2,6 +2,7 @@
 title: "Deploy Rails apps with Kamal on AWS China"
 author: ["Yejun Su"]
 date: 2025-10-18T12:00:00+08:00
+lastmod: 2025-10-20T11:59:08+08:00
 tags: ["aws", "devops"]
 draft: false
 toc: true
@@ -89,4 +90,84 @@ kamal accessory boot db
 ```shell
 kamal setup
 kamal deploy
+```
+
+
+## Software versions {#software-versions}
+
+
+### Kamal {#kamal}
+
+```shell
+$ kamal version
+2.7.0
+```
+
+
+### Docker (local) {#docker--local}
+
+```shell
+$ docker version
+Client:
+ Version:           28.3.3
+ API version:       1.51
+ Go version:        go1.24.5
+ Git commit:        980b856
+ Built:             Fri Jul 25 11:33:03 2025
+ OS/Arch:           darwin/arm64
+ Context:           orbstack
+
+Server: Docker Engine - Community
+ Engine:
+  Version:          28.3.3
+  API version:      1.51 (minimum version 1.24)
+  Go version:       go1.24.5
+  Git commit:       bea959c
+  Built:            Fri Jul 25 11:34:22 2025
+  OS/Arch:          linux/arm64
+  Experimental:     false
+ containerd:
+  Version:          v2.1.4
+  GitCommit:        75cb2b7193e4e490e9fbdc236c0e811ccaba3376
+ runc:
+  Version:          1.3.1
+  GitCommit:        e6457afc48eff1ce22dece664932395026a7105e
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+
+```
+
+
+### Docker (server) {#docker--server}
+
+```shell
+$ docker version
+Client:
+ Version:           28.2.2
+ API version:       1.50
+ Go version:        go1.23.1
+ Git commit:        28.2.2-0ubuntu1~24.04.1
+ Built:             Wed Sep 10 14:16:39 2025
+ OS/Arch:           linux/amd64
+ Context:           default
+
+Server:
+ Engine:
+  Version:          28.2.2
+  API version:      1.50 (minimum version 1.24)
+  Go version:       go1.23.1
+  Git commit:       28.2.2-0ubuntu1~24.04.1
+  Built:            Wed Sep 10 14:16:39 2025
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.7.28
+  GitCommit:
+ runc:
+  Version:          1.3.0-0ubuntu2~24.04.1
+  GitCommit:
+ docker-init:
+  Version:          0.19.0
+  GitCommit:
 ```
