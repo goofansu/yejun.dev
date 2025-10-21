@@ -32,7 +32,7 @@ key ID.
 
 Then export both the public and private key:
 
-```emacs-lisp
+```shell
 gpg --export-secret-keys {YOUR KEY ID} > private-key.gpg
 gpg --export {YOUR KEY ID} > public-key.gpg
 ```
