@@ -2,7 +2,7 @@
 title: "Deploy Rails apps with Kamal on AWS China"
 author: ["Yejun Su"]
 date: 2025-10-18T12:00:00+08:00
-lastmod: 2025-10-21T20:36:08+08:00
+lastmod: 2025-10-22T00:06:32+08:00
 tags: ["aws", "devops"]
 draft: false
 toc: true
@@ -33,11 +33,11 @@ Since I use macOS for development and Ubuntu amd64 for the server, I will pull i
 ```shell
 docker pull basecamp/kamal-proxy:v0.9.0 --platform linux/amd64
 docker tag basecamp/kamal-proxy:v0.9.0 <aws-ecr-registry>/basecamp/kamal-proxy:v0.9.0
-docker push <aws-ecr-registry>/basecamp/kamal-proxy:v0.9.0
+docker push <aws-ecr-domain>/basecamp/kamal-proxy:v0.9.0
 
 docker pull postgres:17 --platform linux/amd64
-docker tag postgres:17 <aws-ecr-registry>/postgres:17
-docker push <aws-ecr-registry>/postgres:17
+docker tag postgres:17 <aws-ecr-domain>/postgres:17
+docker push <aws-ecr-domain>/postgres:17
 ```
 
 
@@ -60,7 +60,7 @@ Before proceeding with this step, create an IAM user named "kamal-deployer" and 
 
 ```shell
 aws configure
-aws ecr get-login-password --region cn-northwest-1 | docker login --username AWS --password-stdin <aws-ecr-registry>
+aws ecr get-login-password --region cn-northwest-1 | docker login --username AWS --password-stdin <aws-ecr-domain>
 ```
 
 
@@ -69,30 +69,95 @@ aws ecr get-login-password --region cn-northwest-1 | docker login --username AWS
 Kamal uses the `basecamp/kamal-proxy` image without specifying the registry name, so tag the image after pulling it.
 
 ```shell
-docker pull <aws-ecr-registry>/basecamp/kamal-proxy:v0.9.0
-docker tag <aws-ecr-registry>/basecamp/kamal-proxy:v0.9.0 basecamp/kamal-proxy:v0.9.0
+docker pull <aws-ecr-domain>/basecamp/kamal-proxy:v0.9.0
+docker tag <aws-ecr-domain>/basecamp/kamal-proxy:v0.9.0 basecamp/kamal-proxy:v0.9.0
 ```
 
 
 #### Pull postgres image from ECR {#pull-postgres-image-from-ecr}
 
 ```shell
-docker pull <aws-ecr-registry>/postgres:17
+docker pull <aws-ecr-domain>/postgres:17
 ```
 
 
 ## Deploy {#deploy}
 
+Run `kamal setup` the first time, then `kamal deploy` for subsequent deployments.
 
-### Deploy everything for the first time {#deploy-everything-for-the-first-time}
+The `config/deploy.yml` is like the following, there are two containers: `web` and `db`:
 
-```shell
-kamal setup
-```
+```yaml
+# Name of your application. Used to uniquely configure containers.
+service: myapp
 
+# Name of the container image.
+image: myapp
 
-### Deploy services {#deploy-services}
+# Deploy to these servers.
+servers:
+  web:
+    - <host>
 
-```shell
-kamal deploy
+# Enable SSL auto certification via Let's Encrypt and allow for multiple apps on a single web server.
+proxy:
+  ssl: true
+  host: <domain>
+  forward_headers: true
+
+# Credentials for your image host.
+registry:
+  server: <aws-ecr-domain>
+  username: AWS
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+# Inject ENV variables into containers (secrets come from .kamal/secrets).
+env:
+  secret:
+    - RAILS_MASTER_KEY
+    - POSTGRES_PASSWORD
+  clear:
+    SOLID_QUEUE_IN_PUMA: true
+    DB_HOST: myapp-db
+
+# Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
+# "bin/kamal logs -r job" will tail logs from the first server in the job section.
+aliases:
+  console: app exec --interactive --reuse "bin/rails console"
+  shell: app exec --interactive --reuse "bash"
+  logs: app logs -f
+  dbc: app exec --interactive --reuse "bin/rails dbconsole"
+
+# Use a persistent storage volume for sqlite database files and local Active Storage files.
+# Recommended to change this to a mounted volume path that is backed up off server.
+volumes:
+  - "myapp_storage:/rails/storage"
+
+# Bridge fingerprinted assets, like JS and CSS, between versions to avoid
+# hitting 404 on in-flight requests. Combines all files from new and old
+# version inside the asset_path.
+asset_path: /rails/public/assets
+
+# Configure the image builder.
+builder:
+  arch: amd64
+
+ssh:
+  user: ubuntu
+
+# Use accessory services (secrets come from .kamal/secrets).
+accessories:
+  db:
+    image: <aws-ecr-domain>/postgres:17
+    host: myapp-prod-app
+    port: 5432
+    env:
+      clear:
+        POSTGRES_DB: myapp_production
+        POSTGRES_USER: myapp
+      secret:
+        - POSTGRES_PASSWORD
+    directories:
+      - data:/var/lib/postgresql/data
 ```

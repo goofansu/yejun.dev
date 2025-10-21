@@ -83,16 +83,81 @@ docker pull <aws-ecr-registry>/postgres:17
 
 ## 部署 {#deploy}
 
+首次部署时运行 `kamal setup`，后续部署使用 `kamal deploy`。
 
-### 首次部署所有内容 {#deploy-everything-for-the-first-time}
+`config/deploy.yml` 配置如下，包含两个容器：`web` 和 `db`：
 
-```shell
-kamal setup
-```
+```yaml
+# Name of your application. Used to uniquely configure containers.
+service: myapp
 
+# Name of the container image.
+image: myapp
 
-### 部署服务 {#deploy-services}
+# Deploy to these servers.
+servers:
+  web:
+    - <host>
 
-```shell
-kamal deploy
+# Enable SSL auto certification via Let's Encrypt and allow for multiple apps on a single web server.
+proxy:
+  ssl: true
+  host: <domain>
+  forward_headers: true
+
+# Credentials for your image host.
+registry:
+  server: <aws-ecr-domain>
+  username: AWS
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+# Inject ENV variables into containers (secrets come from .kamal/secrets).
+env:
+  secret:
+    - RAILS_MASTER_KEY
+    - POSTGRES_PASSWORD
+  clear:
+    SOLID_QUEUE_IN_PUMA: true
+    DB_HOST: myapp-db
+
+# Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
+# "bin/kamal logs -r job" will tail logs from the first server in the job section.
+aliases:
+  console: app exec --interactive --reuse "bin/rails console"
+  shell: app exec --interactive --reuse "bash"
+  logs: app logs -f
+  dbc: app exec --interactive --reuse "bin/rails dbconsole"
+
+# Use a persistent storage volume for sqlite database files and local Active Storage files.
+# Recommended to change this to a mounted volume path that is backed up off server.
+volumes:
+  - "myapp_storage:/rails/storage"
+
+# Bridge fingerprinted assets, like JS and CSS, between versions to avoid
+# hitting 404 on in-flight requests. Combines all files from new and old
+# version inside the asset_path.
+asset_path: /rails/public/assets
+
+# Configure the image builder.
+builder:
+  arch: amd64
+
+ssh:
+  user: ubuntu
+
+# Use accessory services (secrets come from .kamal/secrets).
+accessories:
+  db:
+    image: <aws-ecr-domain>/postgres:17
+    host: myapp-prod-app
+    port: 5432
+    env:
+      clear:
+        POSTGRES_DB: myapp_production
+        POSTGRES_USER: myapp
+      secret:
+        - POSTGRES_PASSWORD
+    directories:
+      - data:/var/lib/postgresql/data
 ```
