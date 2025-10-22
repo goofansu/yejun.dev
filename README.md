@@ -9,5 +9,5 @@ make dev
 ## Update themes
 
 ```shell
-make themes
+make update
 ```

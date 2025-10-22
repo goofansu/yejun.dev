@@ -1,4 +1,4 @@
-.PHONY: dev themes
+.PHONY: dev update
 
 dev:
 	hugo server \
@@ -7,5 +7,6 @@ dev:
 		--navigateToChanged \
 		--printI18nWarnings
 
-themes:
-	hugo mod get github.com/goofansu/hugo-modus
+update:
+	hugo mod get github.com/goofansu/hugo-modus; \
+	git commit -am "update theme"
