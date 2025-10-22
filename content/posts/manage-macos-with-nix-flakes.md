@@ -53,7 +53,7 @@ Let's create a `flake-example` directory for the `flake.nix`, thus, the
 time:
 
 ```text
-/tmp/flake-example> nix build
+$ nix build
 error: flake 'path:/tmp/flake-example' does not provide attribute 'packages.aarch64-darwin.default' or 'defaultPackage.aarch64-darwin'
 ```
 
@@ -76,7 +76,7 @@ The error means something is missing in the `outputs`, let's set the result to
 Run `nix build` again:
 
 ```text
-/tmp/flake-example> nix build
+$ nix build
 error: flake output attribute 'packages.aarch64-darwin.default' is not a derivation or path
 ```
 
@@ -103,7 +103,7 @@ things simple, let's put it aside and set the output attribute to a Nix path:
 Run `nix build` and it is successful:
 
 ```text
-/tmp/flake-example> tree
+$ tree
 .
 ├── flake.lock
 ├── flake.nix
@@ -114,7 +114,7 @@ The `result` symbolic link is the output of the build result, which is located
 in the `/nix/store` directory.
 
 ```bash
-/tmp/flake-example> tree result
+$ tree result
 result
 ├── flake.lock
 └── flake.nix

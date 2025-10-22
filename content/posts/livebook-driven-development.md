@@ -19,8 +19,8 @@ can evaluate Elixir code blocks and see the results immediately.
 There are several methods to run Livebook, I choose the escript way.
 
 ```shell
-> mix escript.install hex livebook
-> livebook server
+$ mix escript.install hex livebook
+$ livebook server
 [Livebook] Application running at http://localhost:8080/?token=xxxxx
 ```
 

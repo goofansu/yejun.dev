@@ -185,10 +185,10 @@ In `config/development/hugo.toml`, override the theme to use the local hugo-modu
 Check the active modules by running `hugo mod graph`:
 
 ```shell
-> hugo mod graph -e development
+$ hugo mod graph -e development
 project ../../hugo-modus
 
-> hugo mod graph -e production
+$ hugo mod graph -e production
 github.com/goofansu/yejun.dev github.com/goofansu/hugo-modus@v0.0.0-20250423135050-b8cf9a1e9268
 ```
 
