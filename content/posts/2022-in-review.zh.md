@@ -1,5 +1,5 @@
 ---
-title: "2022 in review"
+title: 2022
 author: ["Yejun Su"]
 date: 2023-01-22T00:00:00+08:00
 tags: ["review"]
