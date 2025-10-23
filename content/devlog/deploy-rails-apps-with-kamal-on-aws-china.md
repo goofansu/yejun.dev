@@ -2,10 +2,11 @@
 title: "Deploy Rails apps with Kamal on AWS China"
 author: ["Yejun Su"]
 date: 2025-10-18T12:00:00+08:00
-lastmod: 2025-10-22T00:06:32+08:00
+lastmod: 2025-10-23T12:44:30+08:00
 tags: ["aws", "devops"]
 draft: false
 toc: true
+state: "seedling"
 ---
 
 This post describes the steps to deploy a Rails application with Kamal on AWS China.
@@ -15,7 +16,7 @@ This post describes the steps to deploy a Rails application with Kamal on AWS Ch
 
 ```shell
 sudo apt update
-sudo apt install docker.io
+sudo apt install -y docker.io
 sudo usermod -aG docker $USER
 ```
 

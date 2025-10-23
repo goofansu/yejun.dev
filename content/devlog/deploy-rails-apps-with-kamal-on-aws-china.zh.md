@@ -2,10 +2,11 @@
 title: "在 AWS 中国区使用 Kamal 部署 Rails 应用"
 author: ["Yejun Su"]
 date: 2025-10-18T12:00:00+08:00
-lastmod: 2025-10-21T20:36:08+08:00
+lastmod: 2025-10-23T12:44:30+08:00
 tags: ["aws", "devops"]
 draft: false
 toc: true
+state: "seedling"
 ---
 
 本文介绍了在 AWS 中国区使用 Kamal 部署 Rails 应用程序的步骤。
@@ -15,7 +16,7 @@ toc: true
 
 ```shell
 sudo apt update
-sudo apt install docker.io
+sudo apt install -y docker.io
 sudo usermod -aG docker $USER
 ```
 
