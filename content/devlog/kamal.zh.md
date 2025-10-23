@@ -1,18 +1,18 @@
 ---
-title: "Deploy Rails apps with Kamal on AWS China"
+title: "Kamal"
 author: ["Yejun Su"]
 date: 2025-10-18T12:00:00+08:00
-lastmod: 2025-10-23T12:44:30+08:00
+lastmod: 2025-10-23T13:34:37+08:00
 tags: ["aws", "devops"]
 draft: false
 toc: true
 state: "seedling"
 ---
 
-This post describes the steps to deploy a Rails application with Kamal on AWS China.
+## 在 AWS 中国区部署 {#deploy-on-aws-china}
 
 
-## Install Docker on EC2 {#install-docker-on-ec2}
+### 在 EC2 上安装 Docker {#install-docker-on-ec2}
 
 ```shell
 sudo apt update
@@ -21,15 +21,12 @@ sudo usermod -aG docker $USER
 ```
 
 
-## Prepare Docker images {#prepare-docker-images}
+### 推送镜像到 ECR {#push-images-to-ecr}
 
-AWS servers in China cannot access the official Docker registry, so it is necessary to use [AWS ECR](https://www.amazonaws.cn/ecr/) and push the Docker images there.
+中国区的 AWS 服务器无法访问官方的 Docker 镜像仓库，因此需要使用 [AWS ECR](https://www.amazonaws.cn/ecr/) 并将 Docker 镜像推送到那里。
 
-
-### Push images to ECR {#push-images-to-ecr}
-
-Kamal requires the `basecamp/kamal-proxy` image, and I use `postgres` in my project, so I will push both images to ECR.
-Since I use macOS for development and Ubuntu amd64 for the server, I will pull images for the `linux/amd64` platform.
+Kamal 需要 `basecamp/kamal-proxy` 镜像，我的项目中使用 `postgres`，所以我会将这两个镜像都推送到 ECR。
+由于我使用 macOS 进行开发，服务器使用 Ubuntu amd64，因此我会拉取 `linux/amd64` 平台的镜像。
 
 ```shell
 docker pull basecamp/kamal-proxy:v0.9.0 --platform linux/amd64
@@ -42,10 +39,10 @@ docker push <aws-ecr-domain>/postgres:17
 ```
 
 
-### Pull images on EC2 {#pull-images-on-ec2}
+### 在 EC2 上拉取镜像 {#pull-images-on-ec2}
 
 
-#### Install aws-cli {#install-aws-cli}
+#### 安装 aws-cli {#install-aws-cli}
 
 ```shell
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -55,9 +52,9 @@ sudo ./aws/install
 ```
 
 
-#### Login ECR {#login-ecr}
+#### 登录 ECR {#login-ecr}
 
-Before proceeding with this step, create an IAM user named "kamal-deployer" and assign only the "AmazonEC2ContainerRegistryFullAccess" permission.
+在执行此步骤之前，创建一个名为 "kamal-deployer" 的 IAM 用户，并仅分配 "AmazonEC2ContainerRegistryFullAccess" 权限。
 
 ```shell
 aws configure
@@ -65,9 +62,9 @@ aws ecr get-login-password --region cn-northwest-1 | docker login --username AWS
 ```
 
 
-#### Pull kamal-proxy image from ECR {#pull-kamal-proxy-image-from-ecr}
+#### 从 ECR 拉取 kamal-proxy 镜像 {#pull-kamal-proxy-image-from-ecr}
 
-Kamal uses the `basecamp/kamal-proxy` image without specifying the registry name, so tag the image after pulling it.
+Kamal 使用 `basecamp/kamal-proxy` 镜像时没有指定仓库名称，因此在拉取后需要标记镜像。
 
 ```shell
 docker pull <aws-ecr-domain>/basecamp/kamal-proxy:v0.9.0
@@ -75,18 +72,18 @@ docker tag <aws-ecr-domain>/basecamp/kamal-proxy:v0.9.0 basecamp/kamal-proxy:v0.
 ```
 
 
-#### Pull postgres image from ECR {#pull-postgres-image-from-ecr}
+#### 从 ECR 拉取 postgres 镜像 {#pull-postgres-image-from-ecr}
 
 ```shell
 docker pull <aws-ecr-domain>/postgres:17
 ```
 
 
-## Deploy {#deploy}
+### 部署 {#deploy}
 
-Run `kamal setup` the first time, then `kamal deploy` for subsequent deployments.
+在本地机器上，首次运行 `kamal setup`，后续部署运行 `kamal deploy`。
 
-The `config/deploy.yml` is like the following, there are two containers: `web` and `db`:
+`config/deploy.yml` 配置如下，包含两个容器：`web` 和 `db`：
 
 ```yaml
 # Name of your application. Used to uniquely configure containers.
