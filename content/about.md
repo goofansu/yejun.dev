@@ -2,19 +2,43 @@
 title: "About me"
 author: ["Yejun Su"]
 date: 2025-06-05T09:22:00+08:00
-lastmod: 2025-10-23T13:24:45+08:00
+lastmod: 2025-10-31T16:04:15+08:00
 tags: ["personal"]
 draft: false
 ---
 
-👋 I'm Yejun Su, a programmer. I use Ruby to develop web applications in daily work. I like taking notes and [blogging using Denote and Hugo]({{< relref "blogging-using-denote-and-hugo" >}}). I publish primarily in English and occasionally in [Chinese](/zh/posts). You can also find me on [GitHub](https://github.com/goofansu) and [Bluesky](https://bsky.app/profile/yejun.dev).
+👋 Hi, my name is Yejun Su, a programmer.
 
 
-## Projects {#projects}
+## About this website {#about-this-website}
 
-See [projects]({{< relref "projects" >}}) page for all my public work.
+I like taking notes and [blogging using Denote and Hugo]({{< relref "blogging-using-denote-and-hugo" >}}). I publish primarily in English and occasionally in [Chinese](/zh/posts).
 
 
-## Tools {#tools}
+## About my work {#about-my-work}
 
-See [tools]({{< relref "tools" >}}) page for things I use in my workflow.
+In my daily work, I use Ruby to develop web applications. I’m also interested in Elixir and have developed some libraries while learning it.
+
+
+### Active {#active}
+
+-   [hugo-modus](https://github.com/goofansu/hugo-modus): The theme used for this blog
+-   [ogp](https://github.com/goofansu/ogp): Open Graph protocol in Elixir
+-   [ueberauth_weixin](https://github.com/elixir-wechat/ueberauth_weixin): WeChat OAuth2 in Elixir
+
+
+### Inactive {#inactive}
+
+-   [locale_plug](https://github.com/goofansu/locale_plug): An Elixir plug to detect and set locale
+-   [wechat](https://github.com/elixir-wechat/wechat): WeChat APIs in Elixir
+
+
+## Tools I use {#tools-i-use}
+
+See [tools]({{< relref "tools" >}}) page.
+
+
+## Contact me {#contact-me}
+
+-   Find me on [GitHub](https://github.com/goofansu)
+-   Mention me on [Bluesky](https://bsky.app/profile/yejun.dev)
