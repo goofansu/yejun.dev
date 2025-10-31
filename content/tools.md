@@ -2,7 +2,7 @@
 title: "Tools I use"
 author: ["Yejun Su"]
 date: 2025-10-15T12:45:00+08:00
-lastmod: 2025-10-31T14:34:34+08:00
+lastmod: 2025-10-31T16:25:09+08:00
 tags: ["personal"]
 draft: false
 ---
@@ -27,8 +27,10 @@ With the principles, I prefer open source software to proprietary ones:
 
 -   [Bitwarden](https://bitwarden.com) for passwords ($10/year)
 -   [Raindrop](https://raindrop.io) for bookmarks (free)
+-   [Day One](https://dayoneapp.com/) for journal (¥148/year)
 -   [Google Drive](https://drive.google.com/) for photos ($29.99/year)
--   [iCloud](https://www.icloud.com/) for family sharing ($9.99/month)
+-   [iCloud](https://www.icloud.com/) for family sharing (¥68/month)
 -   [Dropbox](https://www.dropbox.com/) for syncing small files (free)
 -   [Claude Code](https://www.claude.com/product/claude-code) for agentic coding ($20/month)
 -   [Vercel](https://vercel.com/) for hosting static websites (free)
+-   [Hetzner](https://hetzner.com/) for hosting hobby projects ($10.59/month)
