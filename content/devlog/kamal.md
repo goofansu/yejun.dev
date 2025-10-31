@@ -2,160 +2,106 @@
 title: "Kamal"
 author: ["Yejun Su"]
 date: 2025-10-18T12:00:00+08:00
-lastmod: 2025-10-23T13:34:37+08:00
+lastmod: 2025-10-31T19:26:36+08:00
 tags: ["aws", "devops"]
 draft: false
 toc: true
-state: "seedling"
+state: "evergreen"
 ---
 
-## Deploy on AWS China {#deploy-on-aws-china}
+I recently deployed a Rails application to Hetzner and AWS China using Kamal.
 
 
-### Install Docker on EC2 {#install-docker-on-ec2}
+## Hetzner {#hetzner}
 
-```shell
-sudo apt update
-sudo apt install -y docker.io
-sudo usermod -aG docker $USER
-```
+The process is very straightforward, and the deployment experience is really smooth.
 
 
-### Push images to ECR {#push-images-to-ecr}
+### Steps {#steps}
 
-AWS servers in China cannot access the official Docker registry, so it is necessary to use [AWS ECR](https://www.amazonaws.cn/ecr/) and push the Docker images there.
-
-Kamal requires the `basecamp/kamal-proxy` image, and I use `postgres` in my project, so I will push both images to ECR.
-Since I use macOS for development and Ubuntu amd64 for the server, I will pull images for the `linux/amd64` platform.
-
-```shell
-docker pull basecamp/kamal-proxy:v0.9.0 --platform linux/amd64
-docker tag basecamp/kamal-proxy:v0.9.0 <aws-ecr-registry>/basecamp/kamal-proxy:v0.9.0
-docker push <aws-ecr-domain>/basecamp/kamal-proxy:v0.9.0
-
-docker pull postgres:17 --platform linux/amd64
-docker tag postgres:17 <aws-ecr-domain>/postgres:17
-docker push <aws-ecr-domain>/postgres:17
-```
+1.  Launch a server
+2.  [Deploy](#deploy)
 
 
-### Pull images on EC2 {#pull-images-on-ec2}
+## AWS China {#aws-china}
+
+Additional work is needed because Docker Hub is inaccessible from servers in China.
 
 
-#### Install aws-cli {#install-aws-cli}
+### Steps {#steps}
 
-```shell
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-sudo apt install unzip
-unzip awscliv2.zip
-sudo ./aws/install
-```
-
-
-#### Login ECR {#login-ecr}
-
-Before proceeding with this step, create an IAM user named "kamal-deployer" and assign only the "AmazonEC2ContainerRegistryFullAccess" permission.
-
-```shell
-aws configure
-aws ecr get-login-password --region cn-northwest-1 | docker login --username AWS --password-stdin <aws-ecr-domain>
-```
+1.  Launch an Amazon EC2 instance
+2.  Create Amazon ECR repositories to store `basecamp/kamal-proxy` and `pgvector/pgvector` images
+3.  Create an IAM user and assign only the "AmazonEC2ContainerRegistryFullAccess" permission
+4.  [Push Docker Hub images to Amazon ECR on local machine](#push-docker-hub-images-to-amazon-ecr-on-local-machine)
+5.  [Pull images from Amazon ECR on Amazon EC2](#pull-images-from-amazon-ecr-on-amazon-ec2)
+6.  [Deploy](#deploy)
 
 
-#### Pull kamal-proxy image from ECR {#pull-kamal-proxy-image-from-ecr}
+### Push Docker Hub images to Amazon ECR on local machine {#push-docker-hub-images-to-amazon-ecr-on-local-machine}
 
-Kamal uses the `basecamp/kamal-proxy` image without specifying the registry name, so tag the image after pulling it.
+1.  Login ECR
+    ```shell
+    aws configure
+    aws ecr get-login-password | docker login --username AWS --password-stdin <aws-ecr-domain>
+    ```
 
-```shell
-docker pull <aws-ecr-domain>/basecamp/kamal-proxy:v0.9.0
-docker tag <aws-ecr-domain>/basecamp/kamal-proxy:v0.9.0 basecamp/kamal-proxy:v0.9.0
-```
+2.  Push `basecamp/kamal-proxy` image
+    ```shell
+    docker pull basecamp/kamal-proxy:v0.9.0 --platform linux/amd64
+    docker tag basecamp/kamal-proxy:v0.9.0 <aws-ecr-domain>/basecamp/kamal-proxy:v0.9.0
+    docker push <aws-ecr-domain>/basecamp/kamal-proxy:v0.9.0
+    ```
+
+3.  Push `pgvector/pgvector` image
+    ```shell
+    docker pull pgvector/pgvector:17 --platform linux/amd64
+    docker tag pgvector/pgvector:17 <aws-ecr-domain>/pgvector/pgvector:17
+    docker push <aws-ecr-domain>/pgvector/pgvector:17
+    ```
 
 
-#### Pull postgres image from ECR {#pull-postgres-image-from-ecr}
+### Pull images from Amazon ECR on Amazon EC2 {#pull-images-from-amazon-ecr-on-amazon-ec2}
 
-```shell
-docker pull <aws-ecr-domain>/postgres:17
-```
+1.  Install Docker
+    ```shell
+    sudo apt update
+    sudo apt install -y docker.io
+    sudo usermod -aG docker $USER
+    ```
+
+2.  Install AWS CLI
+    ```shell
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    sudo apt install -y unzip
+    unzip awscliv2.zip
+    sudo ./aws/install
+    ```
+
+3.  Login ECR
+    ```shell
+    aws configure
+    aws ecr get-login-password | docker login --username AWS --password-stdin <aws-ecr-domain>
+    ```
+
+4.  Pull `basecamp/kamal-proxy` image
+    ```shell
+    docker pull <aws-ecr-domain>/basecamp/kamal-proxy:v0.9.0
+    docker tag <aws-ecr-domain>/basecamp/kamal-proxy:v0.9.0 basecamp/kamal-proxy:v0.9.0
+    ```
+
+5.  Pull `pgvector/pgvector` image
+    ```shell
+    docker pull <aws-ecr-domain>/pgvector/pgvector:17
+    ```
 
 
-### Deploy {#deploy}
+## Deploy {#deploy}
 
-On local machine, run `kamal setup` the first time, then `kamal deploy` for subsequent deployments.
+1.  Run `kamal setup` the first time to setup everything.
+2.  Run `kamal deploy` for subsequent deployments.
 
-The `config/deploy.yml` is like the following, there are two containers: `web` and `db`:
 
-```yaml
-# Name of your application. Used to uniquely configure containers.
-service: myapp
+## Config {#config}
 
-# Name of the container image.
-image: myapp
-
-# Deploy to these servers.
-servers:
-  web:
-    - <host>
-
-# Enable SSL auto certification via Let's Encrypt and allow for multiple apps on a single web server.
-proxy:
-  ssl: true
-  host: <domain>
-  forward_headers: true
-
-# Credentials for your image host.
-registry:
-  server: <aws-ecr-domain>
-  username: AWS
-  password:
-    - KAMAL_REGISTRY_PASSWORD
-
-# Inject ENV variables into containers (secrets come from .kamal/secrets).
-env:
-  secret:
-    - RAILS_MASTER_KEY
-    - POSTGRES_PASSWORD
-  clear:
-    SOLID_QUEUE_IN_PUMA: true
-    DB_HOST: myapp-db
-
-# Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
-# "bin/kamal logs -r job" will tail logs from the first server in the job section.
-aliases:
-  console: app exec --interactive --reuse "bin/rails console"
-  shell: app exec --interactive --reuse "bash"
-  logs: app logs -f
-  dbc: app exec --interactive --reuse "bin/rails dbconsole"
-
-# Use a persistent storage volume for sqlite database files and local Active Storage files.
-# Recommended to change this to a mounted volume path that is backed up off server.
-volumes:
-  - "myapp_storage:/rails/storage"
-
-# Bridge fingerprinted assets, like JS and CSS, between versions to avoid
-# hitting 404 on in-flight requests. Combines all files from new and old
-# version inside the asset_path.
-asset_path: /rails/public/assets
-
-# Configure the image builder.
-builder:
-  arch: amd64
-
-ssh:
-  user: ubuntu
-
-# Use accessory services (secrets come from .kamal/secrets).
-accessories:
-  db:
-    image: <aws-ecr-domain>/postgres:17
-    host: myapp-prod-app
-    port: 5432
-    env:
-      clear:
-        POSTGRES_DB: myapp_production
-        POSTGRES_USER: myapp
-      secret:
-        - POSTGRES_PASSWORD
-    directories:
-      - data:/var/lib/postgresql/data
-```
+See [gist](https://gist.github.com/goofansu/c1f6d806f23cca16d582709cf2fed05e) for reference.
