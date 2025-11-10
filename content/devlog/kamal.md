@@ -2,8 +2,8 @@
 title: "Kamal"
 author: ["Yejun Su"]
 date: 2025-10-18T12:00:00+08:00
-lastmod: 2025-11-09T00:23:24+08:00
-tags: ["aws", "devops"]
+lastmod: 2025-11-10T23:52:05+08:00
+tags: ["deployment"]
 draft: false
 toc: true
 state: "budding"
@@ -42,9 +42,9 @@ The steps are:
 
 3.  Push `pgvector/pgvector` image
     ```shell
-    docker pull pgvector/pgvector:17 --platform linux/amd64
-    docker tag pgvector/pgvector:17 <aws-ecr-domain>/pgvector/pgvector:17
-    docker push <aws-ecr-domain>/pgvector/pgvector:17
+    docker pull pgvector/pgvector:pg17 --platform linux/amd64
+    docker tag pgvector/pgvector:pg17 <aws-ecr-domain>/pgvector/pgvector:pg17
+    docker push <aws-ecr-domain>/pgvector/pgvector:pg17
     ```
 
 
@@ -79,7 +79,7 @@ The steps are:
 
 5.  Pull `pgvector/pgvector` image
     ```shell
-    docker pull <aws-ecr-domain>/pgvector/pgvector:17
+    docker pull <aws-ecr-domain>/pgvector/pgvector:pg17
     ```
 
 
