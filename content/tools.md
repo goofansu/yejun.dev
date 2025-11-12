@@ -2,10 +2,18 @@
 title: "Tools I use"
 author: ["Yejun Su"]
 date: 2025-10-15T12:45:00+08:00
-lastmod: 2025-10-31T16:25:09+08:00
+lastmod: 2025-11-12T23:51:18+08:00
 tags: ["personal"]
 draft: false
 ---
+
+## Hardware {#hardware}
+
+-   HHKB Hybrid at office
+-   Cherry G80-3000 at home [experience]({{< relref "20241125T222714--lock-and-unlock-winfunction-keys-on-cherry-g80-3000__keyboard.org" >}})
+-   LG 27UP850K at home [experience]({{< relref "my-4k-monitor-setup" >}})
+-   Macbook Pro (Apple M1 Pro with 32GB memory)
+
 
 ## Software {#software}
 
