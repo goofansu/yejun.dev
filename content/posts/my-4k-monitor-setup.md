@@ -2,7 +2,7 @@
 title: "My 4K monitor setup"
 author: ["Yejun Su"]
 date: 2025-11-12T17:17:00+08:00
-lastmod: 2025-11-12T23:31:25+08:00
+lastmod: 2025-11-13T00:14:37+08:00
 tags: ["hardware"]
 draft: false
 toc: false
@@ -10,7 +10,7 @@ toc: false
 
 I recently purchased an LG 27UP850K monitor with a 4K resolution (3840x2160). At its native resolution, everything is tiny. When scaled to the 1080p resolution (1920x1080), it displays the same content as a 1080p screen but with much sharper clarity. Then I scaled to the 2K resoluition (2560x1440), it warns "Using a scaled resolution may affect performance". I finally switched back to the native 4K resolution because it displays much more content, which was my main reason for buying this monitor.
 
-I adjusted the settings for the apps I use most often. Here's a summary:
+I adjusted the settings for the [apps]({{< relref "tools" >}}) I use most often. Here's a summary:
 
 -   Google Chrome: Settings -&gt; Appearance -&gt; Set "Page zoom" to 150%.
 -   Slack: Preferences -&gt; Accessibility -&gt; Set "Zoom" to 150%.
