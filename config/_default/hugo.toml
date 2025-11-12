@@ -29,6 +29,11 @@ defaultContentLanguage = 'en'
     pageRef = "/now"
     weight = 20
 
+  [[menus.main]]
+    name = "Inspired"
+    pageRef = "/inspired"
+    weight = 30
+
 [services]
   [services.rss]
     limit = 30
