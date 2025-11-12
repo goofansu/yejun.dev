@@ -2,12 +2,12 @@
 title: "What I'm doing now"
 author: ["Yejun Su"]
 date: 2025-07-31T11:38:00+08:00
-lastmod: 2025-11-13T00:06:19+08:00
+lastmod: 2025-11-13T00:15:51+08:00
 tags: ["personal"]
 draft: false
 ---
 
-(This page records my current work. It's inspired by [Derek Sivers](https://sive.rs/now).)
+(This page records my recent status. It's inspired by [Derek Sivers](https://sive.rs/now).)
 
 
 ## 4K Monitor {#4k-monitor}
