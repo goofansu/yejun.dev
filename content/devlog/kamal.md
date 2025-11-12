@@ -131,5 +131,5 @@ accessories:
 
 See <https://github.com/goofansu/kamal-services> for details.
 
-[^fn:1]: The [gist](https://gist.github.com/goofansu/c1f6d806f23cca16d582709cf2fed05e) is extracted from my application and for your reference.
+[^fn:1]: The [config](https://gist.github.com/goofansu/c1f6d806f23cca16d582709cf2fed05e) is taken from my application for your reference.
 [^fn:2]: [Atuin](https://atuin.sh) is a command-line tool to sync, search and backup shell history.
