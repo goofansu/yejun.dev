@@ -2,7 +2,7 @@
 title: "About me"
 author: ["Yejun Su"]
 date: 2025-06-05T09:22:00+08:00
-lastmod: 2025-10-31T16:04:15+08:00
+lastmod: 2025-11-13T01:11:39+08:00
 tags: ["personal"]
 draft: false
 ---
@@ -31,6 +31,11 @@ In my daily work, I use Ruby to develop web applications. I’m also interested 
 
 -   [locale_plug](https://github.com/goofansu/locale_plug): An Elixir plug to detect and set locale
 -   [wechat](https://github.com/elixir-wechat/wechat): WeChat APIs in Elixir
+
+
+## Things inspired me {#things-inspired-me}
+
+See [inspired]({{< relref "inspired" >}}) page.
 
 
 ## Tools I use {#tools-i-use}
