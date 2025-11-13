@@ -2,7 +2,7 @@
 title: "My 4K monitor setup"
 author: ["Yejun Su"]
 date: 2025-11-12T17:17:00+08:00
-lastmod: 2025-11-13T00:14:37+08:00
+lastmod: 2025-11-13T09:54:21+08:00
 tags: ["hardware"]
 draft: false
 toc: false
@@ -12,8 +12,8 @@ I recently purchased an LG 27UP850K monitor with a 4K resolution (3840x2160). At
 
 I adjusted the settings for the [apps]({{< relref "tools" >}}) I use most often. Here's a summary:
 
--   Google Chrome: Settings -&gt; Appearance -&gt; Set "Page zoom" to 150%.
--   Slack: Preferences -&gt; Accessibility -&gt; Set "Zoom" to 150%.
+-   Google Chrome: Settings -&gt; Appearance -&gt; Set "Page zoom" to 125%.
+-   Slack: Preferences -&gt; Accessibility -&gt; Set "Zoom" to 125%.
 -   Emacs: Create a "large" [fontaine](https://protesilaos.com/emacs/fontaine) preset.[^fn:1]
     ```emacs-lisp
     (use-package fontaine
