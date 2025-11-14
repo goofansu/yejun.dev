@@ -2,7 +2,7 @@
 title: "My 4K monitor setup"
 author: ["Yejun Su"]
 date: 2025-11-12T17:17:00+08:00
-lastmod: 2025-11-13T09:54:21+08:00
+lastmod: 2025-11-19T17:20:10+08:00
 tags: ["hardware"]
 draft: false
 toc: false
@@ -12,9 +12,9 @@ I recently purchased an LG 27UP850K monitor with a 4K resolution (3840x2160). At
 
 I adjusted the settings for the [apps]({{< relref "tools" >}}) I use most often. Here's a summary:
 
--   Google Chrome: Settings -&gt; Appearance -&gt; Set "Page zoom" to 125%.
--   Slack: Preferences -&gt; Accessibility -&gt; Set "Zoom" to 125%.
--   Emacs: Create a "large" [fontaine](https://protesilaos.com/emacs/fontaine) preset.[^fn:1]
+-   Google Chrome: Settings -&gt; Appearance -&gt; Set "Page zoom" to 150%.
+-   Slack: Preferences -&gt; Accessibility -&gt; Set "Zoom" to 150%.
+-   Emacs: Create a "large" [fontaine](https://protesilaos.com/emacs/fontaine) preset.
     ```emacs-lisp
     (use-package fontaine
       :custom
@@ -23,11 +23,6 @@ I adjusted the settings for the [apps]({{< relref "tools" >}}) I use most often.
           :default-height 160)
          (large
           :default-height 240)
-         (presentation
-          :default-family "Aporetic Serif Mono"
-          :default-height 360
-          :fixed-pitch-family "Aporetic Serif Mono"
-          :variable-pitch-family "Aporetic Sans")
          (t
           :default-family "Aporetic Sans Mono"
           :default-weight regular
@@ -40,7 +35,7 @@ I adjusted the settings for the [apps]({{< relref "tools" >}}) I use most often.
       :config
       (fontaine-set-preset (or (fontaine-restore-latest-preset) 'regular)))
     ```
--   Zed: Create a "large" [profile](https://zed.dev/docs/configuring-zed#profiles) and set up the font sizes.[^fn:2]
+-   Zed: Create a "large" [profile](https://zed.dev/docs/configuring-zed#profiles) and set up the font sizes.
     ```json
     {
       "profiles": {
@@ -52,11 +47,19 @@ I adjusted the settings for the [apps]({{< relref "tools" >}}) I use most often.
       }
     }
     ```
--   Ghostty: By default, the new windows and tabs will [inherit the font size](https://ghostty.org/docs/config/reference#window-inherit-font-size) of the previously focused window. So I just set font size to 24px using a keybinding[^fn:3] in any window, and create new windows and tabs from that.
+-   Ghostty: By default, the new windows and tabs will [inherit the font size](https://ghostty.org/docs/config/reference#window-inherit-font-size) of the previously focused window. So I just set font size to 24px using a keybinding in any window, and create new windows and tabs from that.
     ```text
     keybind = ctrl+shift+l=set_font_size:24
     ```
 
-[^fn:1]: [Emacs config](https://github.com/goofansu/emacs-config/blob/7f10543b3224e9ff75c9863cfc4d6db9e1305e1a/modules/init-ui.el#L25-L51%20)
-[^fn:2]: [Zed config](https://github.com/goofansu/zed-config/blob/3cf923ed2c228b391ae853502ea3e20096984ea4/settings.json#L57-L70)
-[^fn:3]: [Ghostty config](https://github.com/goofansu/nix-config/blob/96c5958ccd7bc5fcd5bb167cdabd8049ebbecee3/term.nix#L55-L58)
+
+## Update on 2025-11-15 {#update-on-2025-11-15}
+
+I’ve been using the above settings for three days, and the biggest problem is the overall user interface appearing very small. I switched the display resolution to 2K scaling, and everything is readable now. The warning mentioned at the beginning is now a thing of the past, as explained in ["4K Scaling" Is Not a Problem on Modern Macs](https://bytecellar.com/2022/11/08/4k-scaling-is-not-a-problem-on-modern-macs/):
+
+> The way around this is to have macOS “scale” the display to a more ideal lower resolution, but choosing that option in display preferences presents a warning: “Using a scaled resolution may affect performance.” What the OS does here is to scale up the chosen resolution to double height and double width (4x the pixels displayed) and then scale them back down to the display’s native resolution — 60 times per second. Indeed, this can be too much for certain older systems out there. But, as you will see, modern Macs should be able to handle the task just fine.
+
+
+## Update on 2025-11-19 {#update-on-2025-11-19}
+
+I found the text on the 4K monitor is really sharp, so that I could easily read 12pt font when scaled down to 1080p, whereas I previously needed 16pt on a regular 1080p monitor. So I configured editors and the terminal to use 12pt font, and set the Google Chrome's page zoom to 75% to read more content.
