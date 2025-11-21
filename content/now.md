@@ -2,7 +2,7 @@
 title: "What I'm doing now"
 author: ["Yejun Su"]
 date: 2025-07-31T11:38:00+08:00
-lastmod: 2025-11-13T00:39:31+08:00
+lastmod: 2025-11-22T00:36:01+08:00
 tags: ["personal"]
 draft: false
 ---
@@ -10,19 +10,14 @@ draft: false
 (This page records my recent status. It's inspired by [Derek Sivers](https://sive.rs/now).)
 
 
-## Inspired {#inspired}
+## Self-hosting {#self-hosting}
 
-Add an [inspired]({{< relref "inspired" >}}) page to record articles that inspired me.
+Kamal is a great tool for deployment, which requires only SSH and Docker. I use it to deploy not only Rails applications but also self-hosted services, as described in [Kamal]({{< relref "kamal" >}}). It brings back the true joy of hosting things on bare-metal machines.
 
 
 ## 4K Monitor {#4k-monitor}
 
 Just purchased a [4K monitor]({{< relref "my-4k-monitor-setup" >}}), and I regret not having it earlier.
-
-
-## Kamal deploy {#kamal-deploy}
-
-Kamal is a genius tool built on SSH and Docker, greatly simplifying deployments. I use it to deploy not only Rails applications but also public Docker images, as described in [Kamal]({{< relref "kamal" >}}).
 
 
 ## Agentic coding {#agentic-coding}
