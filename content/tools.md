@@ -2,7 +2,7 @@
 title: "Tools I use"
 author: ["Yejun Su"]
 date: 2025-10-15T12:45:00+08:00
-lastmod: 2025-11-12T23:51:18+08:00
+lastmod: 2025-11-22T12:23:24+08:00
 tags: ["personal"]
 draft: false
 ---
@@ -34,11 +34,17 @@ With the principles, I prefer open source software to proprietary ones:
 ## Services {#services}
 
 -   [Bitwarden](https://bitwarden.com) for passwords ($10/year)
--   [Raindrop](https://raindrop.io) for bookmarks (free)
 -   [Day One](https://dayoneapp.com/) for journal (¥148/year)
 -   [Google Drive](https://drive.google.com/) for photos ($29.99/year)
 -   [iCloud](https://www.icloud.com/) for family sharing (¥68/month)
 -   [Dropbox](https://www.dropbox.com/) for syncing small files (free)
 -   [Claude Code](https://www.claude.com/product/claude-code) for agentic coding ($20/month)
 -   [Vercel](https://vercel.com/) for hosting static websites (free)
--   [Hetzner](https://hetzner.com/) for hosting hobby projects ($10.59/month)
+
+
+### Self-hosting {#self-hosting}
+
+I self-hosted some services on Hetzner using Kamal ([github](https://github.com/goofansu/kamal-services)):
+
+-   [Atuin](https://atuin.yejun.dev) for shell histories
+-   [Linkding](https://links.yejun.dev) for bookmarks

@@ -2,7 +2,7 @@
 title: "About me"
 author: ["Yejun Su"]
 date: 2025-06-05T09:22:00+08:00
-lastmod: 2025-11-13T01:11:39+08:00
+lastmod: 2025-11-22T10:40:19+08:00
 tags: ["personal"]
 draft: false
 ---
