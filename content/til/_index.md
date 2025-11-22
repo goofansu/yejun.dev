@@ -1,4 +1,4 @@
 ---
 title: "TILs"
-description: "Some small things I've learned."
+description: "Some small things I've learned"
 ---

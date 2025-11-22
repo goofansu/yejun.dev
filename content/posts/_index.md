@@ -1,4 +1,4 @@
 ---
 title: "Posts"
-description: "Essays on coding, work, and life."
+description: "Essays on coding, work, and life"
 ---

@@ -1,4 +1,4 @@
 ---
 title: "Blogmark"
-description: "Quotes and comments on links."
+description: "Quotes and comments on links"
 ---

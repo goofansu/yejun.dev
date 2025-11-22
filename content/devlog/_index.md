@@ -1,4 +1,4 @@
 ---
 title: "Devlog"
-description: "Thoughts on software development."
+description: "Thoughts on software development"
 ---
