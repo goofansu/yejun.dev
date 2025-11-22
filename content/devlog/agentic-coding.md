@@ -2,7 +2,7 @@
 title: "Agentic coding"
 author: ["Yejun Su"]
 date: 2025-07-26T11:05:00+08:00
-lastmod: 2025-09-29T17:52:18+08:00
+lastmod: 2025-11-22T19:49:47+08:00
 tags: ["ai"]
 draft: false
 toc: true
@@ -41,7 +41,7 @@ end
 Always truncate the `development.log` file[^fn:1] when starting the server to ensure agents have a clear and relevant log context.
 
 
-#### `bin/dev` {#bin-dev}
+#### bin/dev {#bin-dev}
 
 ```shell { hl_lines=["3"] }
 #!/usr/bin/env sh
