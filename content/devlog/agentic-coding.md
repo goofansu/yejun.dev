@@ -2,7 +2,7 @@
 title: "Agentic coding"
 author: ["Yejun Su"]
 date: 2025-07-26T11:05:00+08:00
-lastmod: 2025-11-22T19:49:47+08:00
+lastmod: 2025-11-24T14:30:15+08:00
 tags: ["ai"]
 draft: false
 toc: true
@@ -38,10 +38,10 @@ end
 
 ### Log context {#log-context}
 
+
+#### Truncate log {#truncate-log}
+
 Always truncate the `development.log` file[^fn:1] when starting the server to ensure agents have a clear and relevant log context.
-
-
-#### bin/dev {#bin-dev}
 
 ```shell { hl_lines=["3"] }
 #!/usr/bin/env sh
@@ -49,6 +49,11 @@ Always truncate the `development.log` file[^fn:1] when starting the server to en
 truncate -s 0 log/development.log
 exec bundle exec foreman start -f Procfile.dev "$@"
 ```
+
+
+#### <span class="org-todo todo TODO">TODO</span> Structured logging {#structured-logging}
+
+Use lograge to output concise logs
 
 
 ### Browser context {#browser-context}
@@ -60,7 +65,7 @@ claude mcp add playwright npx @playwright/mcp@latest
 claude mcp add chrome-devtools npx chrome-devtools-mcp@latest # require Node >= 22.12.0
 ```
 
-And run in YOLO mode:
+And run in dangerous mode:
 
 ```json
 claude --dangerously-skip-permissions
