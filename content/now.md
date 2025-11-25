@@ -2,7 +2,7 @@
 title: "What I'm doing now"
 author: ["Yejun Su"]
 date: 2025-07-31T11:38:00+08:00
-lastmod: 2025-11-22T00:36:01+08:00
+lastmod: 2025-11-25T18:03:46+08:00
 tags: ["personal"]
 draft: false
 ---
@@ -12,7 +12,11 @@ draft: false
 
 ## Self-hosting {#self-hosting}
 
-Kamal is a great tool for deployment, which requires only SSH and Docker. I use it to deploy not only Rails applications but also self-hosted services, as described in [Kamal]({{< relref "kamal" >}}). It brings back the true joy of hosting things on bare-metal machines.
+Kamal is a great tool for deployment, which requires only SSH and Docker. I use it to deploy not only Rails applications but also self-hosted services, as described in [Kamal]({{< relref "kamal" >}}). It brings back the real joy of hosting things on bare-metal machines. For example, the steps I take to deploy [linkding](https://links.yejun.dev/) with [kamal-services](https://github.com/goofansu/kamal-services):
+
+1.  Configure DNS on Cloudflare
+2.  Add secrets in Bitwarden Secrets Manager
+3.  Run `make <service>`
 
 
 ## 4K Monitor {#4k-monitor}
