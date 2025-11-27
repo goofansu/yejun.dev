@@ -2,7 +2,7 @@
 title: "Tools I use"
 author: ["Yejun Su"]
 date: 2025-10-15T12:45:00+08:00
-lastmod: 2025-11-27T12:40:42+08:00
+lastmod: 2025-11-27T13:36:55+08:00
 tags: ["personal"]
 draft: false
 ---
@@ -44,7 +44,7 @@ With the principles, I prefer open source software to proprietary ones:
 
 ### Self-hosting {#self-hosting}
 
-I self-hosted some services on Hetzner using Kamal ([github](https://github.com/goofansu/kamal-services)):
+I self-hosted some services on Hetzner using [kamal-services](https://github.com/goofansu/kamal-services):
 
 -   [Atuin](https://atuin.yejun.dev) for shell histories
 -   [Linkding](https://links.yejun.dev) for web links
