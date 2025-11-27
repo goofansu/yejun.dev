@@ -2,7 +2,7 @@
 title: "Agentic coding"
 author: ["Yejun Su"]
 date: 2025-07-26T11:05:00+08:00
-lastmod: 2025-11-24T14:30:15+08:00
+lastmod: 2025-11-27T12:22:28+08:00
 tags: ["ai"]
 draft: false
 toc: true
@@ -53,7 +53,7 @@ exec bundle exec foreman start -f Procfile.dev "$@"
 
 #### <span class="org-todo todo TODO">TODO</span> Structured logging {#structured-logging}
 
-Use lograge to output concise logs
+...
 
 
 ### Browser context {#browser-context}

@@ -2,7 +2,7 @@
 title: "Tools I use"
 author: ["Yejun Su"]
 date: 2025-10-15T12:45:00+08:00
-lastmod: 2025-11-25T14:47:28+08:00
+lastmod: 2025-11-27T12:40:42+08:00
 tags: ["personal"]
 draft: false
 ---
@@ -47,7 +47,8 @@ With the principles, I prefer open source software to proprietary ones:
 I self-hosted some services on Hetzner using Kamal ([github](https://github.com/goofansu/kamal-services)):
 
 -   [Atuin](https://atuin.yejun.dev) for shell histories
--   [Linkding](https://links.yejun.dev) for bookmarks
--   [Miniflux](https://feeds.yejun.dev) for feeds
+-   [Linkding](https://links.yejun.dev) for web links
+-   [Miniflux](https://feeds.yejun.dev) for RSS feeds
+-   [Wallabag](https://saves.yejun.dev/) for web pages
 
 Cost: $12.59/month
