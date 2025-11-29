@@ -2,7 +2,7 @@
 title: "Tools I use"
 author: ["Yejun Su"]
 date: 2025-10-15T12:45:00+08:00
-lastmod: 2025-11-27T13:36:55+08:00
+lastmod: 2025-11-29T16:06:45+08:00
 tags: ["personal"]
 draft: false
 ---
@@ -46,9 +46,10 @@ With the principles, I prefer open source software to proprietary ones:
 
 I self-hosted some services on Hetzner using [kamal-services](https://github.com/goofansu/kamal-services):
 
--   [Atuin](https://atuin.yejun.dev) for shell histories
--   [Linkding](https://links.yejun.dev) for web links
--   [Miniflux](https://feeds.yejun.dev) for RSS feeds
--   [Wallabag](https://saves.yejun.dev/) for web pages
+-   [Atuin](https://atuin.sh) for shell histories
+-   [Linkding](https://linkding.link) for web links
+-   [Miniflux](https://miniflux.app) for RSS feeds
+-   [Wallabag](https://wallabag.org) for web pages
+-   [Grafana](https://grafana.com) for statistics
 
 Cost: $12.59/month
