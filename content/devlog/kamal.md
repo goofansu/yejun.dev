@@ -2,7 +2,7 @@
 title: "Kamal"
 author: ["Yejun Su"]
 date: 2025-10-18T12:00:00+08:00
-lastmod: 2025-11-10T23:52:05+08:00
+lastmod: 2025-12-02T13:31:12+08:00
 tags: ["deployment"]
 draft: false
 toc: true
@@ -89,11 +89,13 @@ The steps are:
 2.  Run `kamal deploy` for subsequent deployments.
 
 
-## Deploy public images {#deploy-public-images}
+## Self-hosting {#self-hosting}
 
-I use Atuin[^fn:2] for shell history. It supports syncing shell history through a sync server, which can be self-hosted using Docker. [Kamal accessories](https://kamal-deploy.org/docs/configuration/accessories/) are good at deploying such Docker images. The idea is to transform its [Docker Compose example](https://docs.atuin.sh/self-hosting/docker/#docker-compose) to Kamal accessories:
+Since [this pr](https://github.com/basecamp/kamal/pull/981), you can use [kamal-proxy](https://github.com/basecamp/kamal-proxy) to forward requests to [accessories](https://kamal-deploy.org/docs/configuration/accessories/), it's time for self-hosting!
 
-```yaml
+For example, I use Atuin[^fn:2] for shell history, and it supports syncing shell history through a sync server. Thankfully, the sync server can be self-hosted using Docker, and there is a [Docker Compose example](https://docs.atuin.sh/self-hosting/docker/#docker-compose). The task is to transform the example to a Kamal configuration:
+
+```yaml { hl_lines=["26-29"] }
 service: atuin
 image: atuin
 accessories:
@@ -129,7 +131,34 @@ accessories:
         path: "/"
 ```
 
-See <https://github.com/goofansu/kamal-services> for details.
+The highlights adds the `proxy` configuration for the `server` accessory, telling `kamal-proxy` to forwards the HTTP requests to the `server` container's `app_port`.
 
-[^fn:1]: The [config](https://gist.github.com/goofansu/c1f6d806f23cca16d582709cf2fed05e) is taken from my application for your reference.
+[kamal-services](https://github.com/goofansu/kamal-services) includes all my self-hosting services.
+
+
+## Tips {#tips}
+
+
+### kamal-proxy {#kamal-proxy}
+
+You could `ssh` into the host with a running `kamal-proxy`, and execute the following command to see the proxied services:
+
+```shell
+docker exec kamal-proxy kamal-proxy list
+```
+
+For example, let's see the Atuin service:
+
+```shell
+$ docker exec kamal-proxy kamal-proxy list
+Service          Host             Path  Target             State    TLS
+atuin-server     atuin.yejun.dev  /     41fda841ea5c:8888  running  yes
+
+$ docker ps --filter "name=atuin*" --format "table {{.ID}}\t{{.Image}}\t{{.Names}}"
+CONTAINER ID   IMAGE                            NAMES
+41fda841ea5c   ghcr.io/atuinsh/atuin:v18.10.0   atuin-server
+551f7d61d1ac   postgres:14                      atuin-db
+```
+
+[^fn:1]: The [gist](https://gist.github.com/goofansu/c1f6d806f23cca16d582709cf2fed05e) is extracted from my application and for your reference.
 [^fn:2]: [Atuin](https://atuin.sh) is a command-line tool to sync, search and backup shell history.
