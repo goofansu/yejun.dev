@@ -2,7 +2,7 @@
 title: "Tools I use"
 author: ["Yejun Su"]
 date: 2025-10-15T12:45:00+08:00
-lastmod: 2025-11-29T16:06:45+08:00
+lastmod: 2025-12-03T14:10:21+08:00
 tags: ["personal"]
 draft: false
 ---
@@ -52,4 +52,4 @@ I self-hosted some services on Hetzner using [kamal-services](https://github.com
 -   [Wallabag](https://wallabag.org) for web pages
 -   [Grafana](https://grafana.com) for statistics
 
-Cost: $12.59/month
+Cost: $12.60/month
