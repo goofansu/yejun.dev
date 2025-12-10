@@ -2,7 +2,7 @@
 title: "Kamal"
 author: ["Yejun Su"]
 date: 2025-10-18T12:00:00+08:00
-lastmod: 2025-12-02T13:31:12+08:00
+lastmod: 2025-12-10T23:19:50+08:00
 tags: ["deployment"]
 draft: false
 toc: true
@@ -132,8 +132,6 @@ accessories:
 ```
 
 The highlights adds the `proxy` configuration for the `server` accessory, telling `kamal-proxy` to forwards the HTTP requests to the `server` container's `app_port`.
-
-[kamal-services](https://github.com/goofansu/kamal-services) includes all my self-hosting services.
 
 
 ## Tips {#tips}

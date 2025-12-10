@@ -2,7 +2,7 @@
 title: "Tools I use"
 author: ["Yejun Su"]
 date: 2025-10-15T12:45:00+08:00
-lastmod: 2025-12-03T14:10:21+08:00
+lastmod: 2025-12-10T23:59:14+08:00
 tags: ["personal"]
 draft: false
 ---
@@ -44,7 +44,7 @@ With the principles, I prefer open source software to proprietary ones:
 
 ### Self-hosting {#self-hosting}
 
-I self-hosted some services on Hetzner using [kamal-services](https://github.com/goofansu/kamal-services):
+I self-hosted some services on Hetzner:
 
 -   [Atuin](https://atuin.sh) for shell histories
 -   [Linkding](https://linkding.link) for web links
@@ -52,4 +52,4 @@ I self-hosted some services on Hetzner using [kamal-services](https://github.com
 -   [Wallabag](https://wallabag.org) for web pages
 -   [Grafana](https://grafana.com) for statistics
 
-Cost: $12.60/month
+Cost: $12.6/month
