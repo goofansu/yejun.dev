@@ -2,12 +2,19 @@
 title: "What I'm doing now"
 author: ["Yejun Su"]
 date: 2025-07-31T11:38:00+08:00
-lastmod: 2025-12-10T23:19:43+08:00
+lastmod: 2025-12-14T12:37:06+08:00
 tags: ["personal"]
 draft: false
 ---
 
 (This page records my recent status. It's inspired by [Derek Sivers](https://sive.rs/now).)
+
+
+## Meet Derek Sivers {#meet-derek-sivers}
+
+It has been a long time since I knew Derek the first time from his article [Parenting : Who is it really for?](https://sive.rs/pa), and finally met him on Decemember 4th, 2025. We took a city walk and talked a lot, mostly about programming, especially WeChat, he wants to publish all things through API, very cool. Besides, we talked about the life in Shanghai, learning Chinese, and kids, it's a great memory. I'm scared to meet new people, espically have a talk for hours, but talking with Derek is really nice.
+
+{{< figure src="/attachments/20251214T111555--img-4660.jpeg" caption="<span class=\"figure-number\">Figure 1: </span>A selfish of Derek and me" width="320" >}}
 
 
 ## Self-hosting {#self-hosting}
