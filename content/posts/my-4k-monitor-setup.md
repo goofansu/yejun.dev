@@ -2,7 +2,7 @@
 title: "My 4K monitor setup"
 author: ["Yejun Su"]
 date: 2025-11-12T17:17:00+08:00
-lastmod: 2025-11-22T19:37:52+08:00
+lastmod: 2025-12-14T12:59:41+08:00
 tags: ["hardware"]
 draft: false
 toc: false
@@ -63,3 +63,8 @@ I’ve been using the above settings for three days, and the biggest problem is 
 ## Update on 2025-11-19 {#update-on-2025-11-19}
 
 I found the text on the 4K monitor is really sharp, so that I could easily read 12px font when scaled down to 1080p, whereas I previously needed 16px on a regular 1080p monitor. So I configured editors and the terminal to use 12px font, and set the Google Chrome's page zoom to 75% to read more content.
+
+
+## Update on 2025-12-14 {#update-on-2025-12-14}
+
+I use 16px font in editor and 100% page zoom in Google Chrome, it means the same configuration as before, but my eyes are very comfortable so that I could work in front of the monitor for longer periods of time without eye strain.
