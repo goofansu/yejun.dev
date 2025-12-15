@@ -14,7 +14,7 @@ draft: false
 
 It has been a long time since I knew Derek the first time from his article [Parenting : Who is it really for?](https://sive.rs/pa), and finally met him on Decemember 4th, 2025. We took a city walk and talked a lot, mostly about programming, especially WeChat, he wants to publish all things through API, very cool. Besides, we talked about the life in Shanghai, learning Chinese, and kids, it's a great memory. I'm scared to meet new people, espically have a talk for hours, but talking with Derek is really nice.
 
-{{< figure src="/attachments/20251214T111555--img-4660.jpeg" caption="<span class=\"figure-number\">Figure 1: </span>A selfish of Derek and me" width="320" >}}
+{{< figure src="/attachments/20251214T111555--img-4660.jpeg" caption="<span class=\"figure-number\">Figure 1: </span>A selfie of Derek and me" width="320" >}}
 
 
 ## Self-hosting {#self-hosting}
