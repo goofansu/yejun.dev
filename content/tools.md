@@ -2,7 +2,7 @@
 title: "Tools I use"
 author: ["Yejun Su"]
 date: 2025-10-15T12:45:00+08:00
-lastmod: 2025-12-15T14:16:57+08:00
+lastmod: 2025-12-18T10:11:42+08:00
 tags: ["personal"]
 draft: false
 ---
@@ -47,10 +47,10 @@ With the principles, I prefer open source software to proprietary ones:
 
 I self-hosted some services on Hetzner:
 
--   [Atuin](https://atuin.sh) for shell histories
--   [Linkding](https://linkding.link) for web links
--   [Miniflux](https://miniflux.app) for RSS feeds
--   [Wallabag](https://wallabag.org) for web pages
--   [Grafana](https://grafana.com) for statistics
+-   [Atuin](https://atuin.sh) for syncing shell histories
+-   [Linkding](https://linkding.link) for saving web links
+-   [Miniflux](https://miniflux.app) for subscribing RSS feeds
+-   [Wallabag](https://wallabag.org) for archiving web pages
+-   [Grafana](https://grafana.com) for collecting logs and visualizing data
 
 Cost: $12.60/month
