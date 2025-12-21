@@ -2,7 +2,7 @@
 title: "Tools I use"
 author: ["Yejun Su"]
 date: 2025-10-15T12:45:00+08:00
-lastmod: 2025-12-18T10:11:42+08:00
+lastmod: 2025-12-21T11:58:48+08:00
 tags: ["personal"]
 draft: false
 ---
@@ -38,14 +38,13 @@ With the principles, I prefer open source software to proprietary ones:
 
 -   [Bitwarden](https://bitwarden.com) for passwords ($10/year)
 -   [Claude Code](https://www.claude.com/product/claude-code) for agentic coding ($20/month)
--   [Google AI Pro](https://gemini.google/subscriptions/) for general tasks ($19.99/month)
 -   [Dropbox](https://www.dropbox.com/) for syncing files (free)
 -   [Vercel](https://vercel.com/) for hosting static websites (free)
 
 
 ### Self-hosting {#self-hosting}
 
-I self-hosted some services on Hetzner:
+I self-hosted some services on Hetzner using [kamal-services](https://github.com/goofansu/kamal-services):
 
 -   [Atuin](https://atuin.sh) for syncing shell histories
 -   [Linkding](https://linkding.link) for saving web links
