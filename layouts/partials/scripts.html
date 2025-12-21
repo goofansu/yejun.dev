@@ -1,7 +1,8 @@
 {{ if hugo.IsProduction }}
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://analytics.yejun.dev/js/pa-qI46YkhKlpFQ_TvbLf0vh.js"></script>
   <script>
-   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
   </script>
-
-  <script defer src="/_vercel/insights/script.js"></script>
 {{ end }}
