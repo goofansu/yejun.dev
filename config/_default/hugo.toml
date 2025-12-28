@@ -5,7 +5,7 @@ copyright = "&copy; 2025 Yejun Su"
 disableKinds = ["taxonomy", "term"]
 enableRobotsTXT = true
 
-defaultContentLanguage = 'en'
+defaultContentLanguage = "en"
 
 [module]
   [[module.imports]]
@@ -35,8 +35,11 @@ defaultContentLanguage = 'en'
 
 [languages]
   [languages.en]
-    languageName = 'English'
+    languageName = "English"
     weight = 10
   [languages.zh]
-    languageName = '中文'
+    languageName = "中文"
     weight = 20
+
+[outputs]
+  page = ["html", "markdown"]
