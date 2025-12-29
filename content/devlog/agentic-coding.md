@@ -2,7 +2,7 @@
 title: "Agentic coding"
 author: ["Yejun Su"]
 date: 2025-07-26T11:05:00+08:00
-lastmod: 2025-11-27T12:22:28+08:00
+lastmod: 2025-12-29T12:40:22+08:00
 tags: ["ai"]
 draft: false
 toc: true
@@ -49,11 +49,6 @@ Always truncate the `development.log` file[^fn:1] when starting the server to en
 truncate -s 0 log/development.log
 exec bundle exec foreman start -f Procfile.dev "$@"
 ```
-
-
-#### <span class="org-todo todo TODO">TODO</span> Structured logging {#structured-logging}
-
-...
 
 
 ### Browser context {#browser-context}
