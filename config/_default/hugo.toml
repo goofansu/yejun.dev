@@ -4,6 +4,7 @@ copyright = "&copy; 2025 Yejun Su"
 
 disableKinds = ["taxonomy", "term"]
 enableRobotsTXT = true
+ignoreLogs = ['warning-goldmark-raw-html']
 
 defaultContentLanguage = "en"
 
