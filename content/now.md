@@ -2,12 +2,17 @@
 title: "What I'm doing now"
 author: ["Yejun Su"]
 date: 2025-07-31T11:38:00+08:00
-lastmod: 2025-12-14T12:37:06+08:00
+lastmod: 2026-02-01T17:56:06+08:00
 tags: ["personal"]
 draft: false
 ---
 
 (This page records my recent status. It's inspired by [Derek Sivers](https://sive.rs/now).)
+
+
+## Use Zen browser {#use-zen-browser}
+
+As an earlier Arc browser user, Zen browser is very intuitive to use. It takes advantage of the Firefox ecosystem while providing a "calmer" interface. Love it!
 
 
 ## Meet Derek Sivers {#meet-derek-sivers}

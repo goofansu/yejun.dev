@@ -2,7 +2,7 @@
 title: "Tools I use"
 author: ["Yejun Su"]
 date: 2025-10-15T12:45:00+08:00
-lastmod: 2025-12-21T20:01:58+08:00
+lastmod: 2026-01-06T00:59:53+08:00
 tags: ["personal"]
 draft: false
 ---
@@ -53,4 +53,4 @@ I self-hosted some services on Hetzner:
 -   [Grafana](https://grafana.com) for data visualization
 -   [Plausible](https://plausible.io/) for web analytics
 
-Cost: $12.60/month
+Cost: $12.62/month
