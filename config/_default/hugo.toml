@@ -41,6 +41,3 @@ defaultContentLanguage = "en"
   [languages.zh]
     languageName = "中文"
     weight = 20
-
-[outputs]
-  page = ["html", "markdown"]

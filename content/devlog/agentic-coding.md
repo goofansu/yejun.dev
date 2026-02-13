@@ -2,7 +2,7 @@
 title: "Agentic coding"
 author: ["Yejun Su"]
 date: 2025-07-26T11:05:00+08:00
-lastmod: 2025-12-29T12:40:22+08:00
+lastmod: 2026-02-07T11:07:48+08:00
 tags: ["ai"]
 draft: false
 toc: true
@@ -93,5 +93,94 @@ Since I use Emacs as my main editor, switching between Zed and Emacs is necessar
 
 -   Emacs: <https://github.com/goofansu/emacs-config/blob/main/site-lisp/macos.el>
 -   Zed: <https://github.com/goofansu/zed-config/blob/main/tasks.json> and <https://github.com/goofansu/zed-config/blob/main/keymap.json>
+
+
+## Solving bugs {#solving-bugs}
+
+
+### Code logic bugs {#code-logic-bugs}
+
+I often solve code logic bugs in three steps:
+
+
+#### Asking AI questions using plan mode with Claude Opus 4.5 {#asking-ai-questions-using-plan-mode-with-claude-opus-4-dot-5}
+
+Prompt:
+
+```text
+<describe the bug with as much as context I know>
+```
+
+It'll search the code base and generally could find the root cause.
+
+
+#### Asking AI to write unit tests to confirm the bug. {#asking-ai-to-write-unit-tests-to-confirm-the-bug-dot}
+
+Prompt:
+
+```text
+Write unit tests to confirm your assumption.
+```
+
+
+#### Asking AI to solve the bug {#asking-ai-to-solve-the-bug}
+
+Switch to build mode, and uses Claude Sonnet 4.5 to fix the bug.
+
+
+#### Code review {#code-review}
+
+
+#### Create an issue {#create-an-issue}
+
+Use [gh-issue-sync](https://github.com/mitsuhiko/gh-issue-sync) skill to create an issue, which is used by QA and code reviewer to understand the changes.
+
+Prompt:
+
+```text
+Use gh-issue-sync skill to create an issue in the form of:
+
+## Problem
+Summarize the problem.
+
+## Solution
+Your findings and changes.
+
+## Verify
+Minimal steps for QA to verify the solution.
+
+## Claude code prompt digest
+Write it using the details disclosure element.
+```
+
+
+#### Create a pull request {#create-a-pull-request}
+
+Prompt:
+
+```text
+- Jira section with link to jira ticket
+- Staging section (asking user)
+- Summary - Brief description of the bug and fix
+- Changes - Bullet list of technical changes made
+- Technical Details - In-depth explanation with root cause, example, and solution
+- QA Verification - Detailed test cases with numbered steps and expected results
+- Closes #ISSUE_NUMBER - Link to the related issue if exists (omit if no issue)
+```
+
+
+## Context switching is required {#context-switching-is-required}
+
+The ability to keep attention and fast context switching is required.
+
+
+## Feedback for verification {#feedback-for-verification}
+
+Unit tests can help AI changing code more confidently.
+
+
+## Use pi coding agent {#use-pi-coding-agent}
+
+[Pi coding agent](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent) is a coding agent with a tiny core. By using extensions, I can customize to what I need, great for suit my own workflow.
 
 [^fn:1]: Inspired by [Agentic Coding with Claude Code](https://www.youtube.com/live/Y4_YYrIKLac)
