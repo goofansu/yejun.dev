@@ -2,12 +2,17 @@
 title: "What I'm doing now"
 author: ["Yejun Su"]
 date: 2025-07-31T11:38:00+08:00
-lastmod: 2026-02-01T17:56:06+08:00
+lastmod: 2026-03-09T23:55:37+08:00
 tags: ["personal"]
 draft: false
 ---
 
 (This page records my recent status. It's inspired by [Derek Sivers](https://sive.rs/now).)
+
+
+## Vibe coding {#vibe-coding}
+
+I vibe coded a dictation tool: [minidic](https://github.com/goofansu/minidic) in the past two months, I started to use my voice for input as more as possible. This section is written using minidic, Currently, the keyboard input is still faster than my voice because I'm not a native English speaker, and some words are not detected correctly, I need to correct them manually, I think I'll be used to it.
 
 
 ## Use Zen browser {#use-zen-browser}
