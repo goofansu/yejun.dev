@@ -2,7 +2,7 @@
 title: "Agentic coding"
 author: ["Yejun Su"]
 date: 2025-07-26T11:05:00+08:00
-lastmod: 2026-02-07T11:07:48+08:00
+lastmod: 2026-04-03T10:51:32+08:00
 tags: ["ai"]
 draft: false
 toc: true
@@ -182,5 +182,10 @@ Unit tests can help AI changing code more confidently.
 ## Use pi coding agent {#use-pi-coding-agent}
 
 [Pi coding agent](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent) is a coding agent with a tiny core. By using extensions, I can customize to what I need, great for suit my own workflow.
+
+
+## Ghostty {#ghostty}
+
+Each project/worktree per window.
 
 [^fn:1]: Inspired by [Agentic Coding with Claude Code](https://www.youtube.com/live/Y4_YYrIKLac)
