@@ -2,12 +2,12 @@
 title: "What I'm doing now"
 author: ["Yejun Su"]
 date: 2025-07-31T11:38:00+08:00
-lastmod: 2026-04-25T12:16:37+08:00
+lastmod: 2026-04-25T14:25:41+08:00
 tags: ["personal"]
 draft: false
 ---
 
-(This page records my recent status. It's inspired by [Derek Sivers](https://sive.rs/now).)
+(This page records my recent status. It's [inspired]({{< relref "inspired" >}}) by [Derek Sivers](https://sive.rs/now).)
 
 
 ## Pi coding agent {#pi-coding-agent}
