@@ -7,6 +7,7 @@ enableRobotsTXT = true
 ignoreLogs = ['warning-goldmark-raw-html']
 
 defaultContentLanguage = "en"
+mainSections = ['posts']
 
 [module]
   [[module.imports]]
