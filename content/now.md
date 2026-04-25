@@ -2,7 +2,7 @@
 title: "What I'm doing now"
 author: ["Yejun Su"]
 date: 2025-07-31T11:38:00+08:00
-lastmod: 2026-03-09T23:55:37+08:00
+lastmod: 2026-04-25T12:16:37+08:00
 tags: ["personal"]
 draft: false
 ---
@@ -10,33 +10,15 @@ draft: false
 (This page records my recent status. It's inspired by [Derek Sivers](https://sive.rs/now).)
 
 
-## Vibe coding {#vibe-coding}
+## Pi coding agent {#pi-coding-agent}
 
-I vibe coded a dictation tool: [minidic](https://github.com/goofansu/minidic) in the past two months, I started to use my voice for input as more as possible. This section is written using minidic, Currently, the keyboard input is still faster than my voice because I'm not a native English speaker, and some words are not detected correctly, I need to correct them manually, I think I'll be used to it.
+I use the [pi coding agent](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent) for agentic coding on my machine and have been exploring more use cases:
 
-
-## Use Zen browser {#use-zen-browser}
-
-As an earlier Arc browser user, Zen browser is very intuitive to use. It takes advantage of the Firefox ecosystem while providing a "calmer" interface. Love it!
-
-
-## Meet Derek Sivers {#meet-derek-sivers}
-
-It has been a long time since I knew Derek the first time from his article [Parenting : Who is it really for?](https://sive.rs/pa), and finally met him on Decemember 4th, 2025. We took a city walk and talked a lot, mostly about programming, especially WeChat, he wants to publish all things through API, very cool. Besides, we talked about the life in Shanghai, learning Chinese, and kids, it's a great memory. I'm scared to meet new people, espically have a talk for hours, but talking with Derek is really nice.
-
-{{< figure src="/attachments/20251214T111555--img-4660.jpeg" caption="<span class=\"figure-number\">Figure 1: </span>A selfie of Derek and me" width="320" >}}
+1.  [pi-chat](https://github.com/goofansu/pi-chat): delegate the support work to pi
+2.  [pi-remote-control](https://github.com/goofansu/pi-remote-control): access pi sessions through a private network
+3.  [pi-subagent](https://github.com/goofansu/pi-subagent): building the subagent tool to learn pi extension's lifecycle
 
 
-## Self-hosting {#self-hosting}
+## Zen browser {#zen-browser}
 
-Kamal is a great tool for deployment, which requires only SSH and Docker. I use it to deploy not only Rails applications but also self-hosted services, as described in [Kamal]({{< relref "kamal" >}}). It brings back the real joy of hosting things on bare-metal machines.
-
-
-## 4K Monitor {#4k-monitor}
-
-Just purchased a [4K monitor]({{< relref "my-4k-monitor-setup" >}}), and I regret not having it earlier.
-
-
-## Agentic coding {#agentic-coding}
-
-I’ve been using Claude Code and sometimes Amp for [agentic coding]({{< relref "agentic-coding" >}}) in my daily work. I’m also starting experiments with v0 to create concept prototypes using [shadcn/ui](https://ui.shadcn.com/docs/installation/vite) components, which I could use directly in my Rails+Vite project.
+I've been using Zen browser for 2 months, and it works really good!
