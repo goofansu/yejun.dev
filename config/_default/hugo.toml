@@ -1,6 +1,6 @@
 baseURL = "https://yejun.dev/"
 title = "Yejun Su"
-copyright = "&copy; 2025 Yejun Su"
+copyright = "&copy; 2026 Yejun Su"
 
 disableKinds = ["taxonomy", "term"]
 enableRobotsTXT = true
