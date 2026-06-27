@@ -2,38 +2,45 @@
 title: "Agentic coding"
 author: ["Yejun Su"]
 date: 2025-07-26T11:05:00+08:00
-lastmod: 2026-04-03T10:51:32+08:00
+lastmod: 2026-06-27T19:23:16+08:00
 tags: ["ai"]
 draft: false
 toc: true
 state: "seedling"
 ---
 
-My workflow is based on [devenv](https://devenv.sh/) and [git worktree](https://docs.anthropic.com/en/docs/claude-code/common-workflows#run-parallel-claude-code-sessions-with-git-worktrees). In this post, I'll use a Rails application as an example.
+I work with agents mostly in TUI with `gh/tmux/worktrunk/fzf`.
+
+Principles:
+
+1.  Use one worktree per branch with [Worktrunk](https://worktrunk.dev)
+2.  Dispatch tasks to agents in a new [Tmux](https://github.com/tmux/tmux) window
 
 
-## Context engineering {#context-engineering}
+## Context {#context}
 
 
 ### Project context {#project-context}
 
-I maintain project context using git worktree. In this way, it's easy to develop across multiple branches while preserving context for code agents.
+I maintain project context using git worktrees. In this way, it's easy to develop in parallel while preserving context for code agents.
+
+Use `openapply` as an example,
+
+Fix a bug based on the `master` branch:
 
 ```shell
-cd my_app
-git worktree add ../my_app-feature-xyz -b feature/xyz develop
-cd ../my_app-feature-xyz
-direnv allow
-bin/dev
+cd openapply
+wt switch -c fix-bug -b master # Create fix-bug branch and switch to openapply.fix-bug directory
 ```
 
-Tip: A fish-shell alias for quickly switching between git worktree directories:
+Develop on a new feature (omit `-b` to use the default branch):
 
 ```shell
-function gcd --description 'Fuzzy find and cd the selected git worktree'
-    git worktree list --porcelain | grep '^worktree ' | sed 's/^worktree //' | fzf | awk '{print $1}' | read -l result; and cd $result
-end
+cd openapply
+wt switch -c new-feature # Create new-feature branch and switch to openapply.new-feature directory
 ```
+
+Tip: Worktrunk provides hooks to set up your environment for new worktrees.
 
 
 ### Log context {#log-context}
@@ -85,107 +92,86 @@ Example:
 ```
 
 
-## Code review {#code-review}
+## Skills {#skills}
 
-I use the Zed editor to review the code changed by agents as it supports [multibuffers](https://zed.dev/docs/multibuffers) which allows me to edit the `git diff` results. Additionally, it's really fast and I enjoy using it in daily work.
+I use a combination of [superpowers](https://github.com/obra/superpowers) + 5 skills from [mattpocock/skills](https://github.com/mattpocock/skills) + my own skills:
 
-Since I use Emacs as my main editor, switching between Zed and Emacs is necessary, it requires a single piece of code:
+Superpowers is a methodology enforcing spec -&gt; implementation, and it uses skills according to the scope of tasks, for example:
 
--   Emacs: <https://github.com/goofansu/emacs-config/blob/main/site-lisp/macos.el>
--   Zed: <https://github.com/goofansu/zed-config/blob/main/tasks.json> and <https://github.com/goofansu/zed-config/blob/main/keymap.json>
+-   Feature development: brainstorming -&gt; writing-plans -&gt; subagent-driven-development -&gt; verification-before-completion
+-   Bug fixing: systematic-debugging -&gt; test-driven-development
 
+Matt's skills is more like copilot with agent, I chose four skills for supplement:
 
-## Solving bugs {#solving-bugs}
+-   grill-with-docs: it depends on grilling and domain-modeling (from [Domain-Driven Design](https://en.wikipedia.org/wiki/Domain-driven_design))
+-   codebase-design: write good code by designing deep modules (from [A Philosophy Of Software Design](https://web.stanford.edu/~ouster/cgi-bin/aposd.php))
+-   triage: I customized the skill and use it as a follow-up after creating a GitHub issue through `gh ai import <url>`
 
+My skills:
 
-### Code logic bugs {#code-logic-bugs}
-
-I often solve code logic bugs in three steps:
-
-
-#### Asking AI questions using plan mode with Claude Opus 4.5 {#asking-ai-questions-using-plan-mode-with-claude-opus-4-dot-5}
-
-Prompt:
-
-```text
-<describe the bug with as much as context I know>
-```
-
-It'll search the code base and generally could find the root cause.
+-   commit: create Conventional Commits commits
+-   handoff: write a handoff document, and optionally launch an agent in Tmux for the handoff
 
 
-#### Asking AI to write unit tests to confirm the bug. {#asking-ai-to-write-unit-tests-to-confirm-the-bug-dot}
+## Tools {#tools}
 
-Prompt:
-
-```text
-Write unit tests to confirm your assumption.
-```
+Tools are mostly command line utilities.
 
 
-#### Asking AI to solve the bug {#asking-ai-to-solve-the-bug}
+### agent-browser {#agent-browser}
 
-Switch to build mode, and uses Claude Sonnet 4.5 to fix the bug.
+Link: <https://agent-browser.dev/>
 
-
-#### Code review {#code-review}
-
-
-#### Create an issue {#create-an-issue}
-
-Use [gh-issue-sync](https://github.com/mitsuhiko/gh-issue-sync) skill to create an issue, which is used by QA and code reviewer to understand the changes.
-
-Prompt:
-
-```text
-Use gh-issue-sync skill to create an issue in the form of:
-
-## Problem
-Summarize the problem.
-
-## Solution
-Your findings and changes.
-
-## Verify
-Minimal steps for QA to verify the solution.
-
-## Claude code prompt digest
-Write it using the details disclosure element.
+```shell
+npm install -g agent-browser
+agent-browser install
 ```
 
 
-#### Create a pull request {#create-a-pull-request}
+## Workflow {#workflow}
 
-Prompt:
+
+### Delegate work to agents {#delegate-work-to-agents}
+
+I delegate work to agents using a [gh-ai extension](https://github.com/goofansu/nix-config/blob/main/scripts/gh-ai.fish).
 
 ```text
-- Jira section with link to jira ticket
-- Staging section (asking user)
-- Summary - Brief description of the bug and fix
-- Changes - Bullet list of technical changes made
-- Technical Details - In-depth explanation with root cause, example, and solution
-- QA Verification - Detailed test cases with numbered steps and expected results
-- Closes #ISSUE_NUMBER - Link to the related issue if exists (omit if no issue)
+gh ai - Agent helpers for GitHub issues and pull requests
+
+USAGE
+  gh ai <command> [flags]
+
+COMMANDS
+  fix [issue-number | gh-issue-list filters...]
+      Fix an issue by number, or select one with fzf
+  import <url>
+      Inspect a URL and create a GitHub issue
+  review [pr-number | gh-pr-list filters...]
+      Review a PR by number, or select one with fzf
+  work [pr-number | gh-pr-list filters...]
+      Continue work on a PR by number, or select one with fzf
+  help
+      Show this help
+
+GLOBAL FLAGS
+  --agent COMMAND  Agent executable to run. Defaults to cx.
+  --prompt PROMPT  Custom prompt template for the agent.
+
+COMMAND FLAGS
+  fix:
+    --base BASE      Branch to start the fix from. Defaults to default branch.
+    --branch BRANCH  Branch to create for the fix. Defaults to issue-<number>.
+
+PROMPT VARIABLES
+  import:      {url}
+  review/work: {pr}
+  fix:         {issue}, {branch}, {base}
+
+EXAMPLES
+  gh ai fix 123 --prompt 'Fix issue {issue} on {branch} from {base}'
+  gh ai import https://example.com/ticket/123
+  gh ai review 456 --prompt '/review {pr}. Focus on regression risk'
+  gh ai work --author octocat --prompt 'Continue PR {pr}'
 ```
-
-
-## Context switching is required {#context-switching-is-required}
-
-The ability to keep attention and fast context switching is required.
-
-
-## Feedback for verification {#feedback-for-verification}
-
-Unit tests can help AI changing code more confidently.
-
-
-## Use pi coding agent {#use-pi-coding-agent}
-
-[Pi coding agent](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent) is a coding agent with a tiny core. By using extensions, I can customize to what I need, great for suit my own workflow.
-
-
-## Ghostty {#ghostty}
-
-Each project/worktree per window.
 
 [^fn:1]: Inspired by [Agentic Coding with Claude Code](https://www.youtube.com/live/Y4_YYrIKLac)
