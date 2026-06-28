@@ -2,7 +2,7 @@
 title: "Debugging Claude's MCP Server with Nix"
 author: ["Yejun Su"]
 date: 2025-03-25T16:35:00+08:00
-tags: ["bib", "mcp", "nix"]
+tags: ["mcp", "nix"]
 draft: false
 ---
 

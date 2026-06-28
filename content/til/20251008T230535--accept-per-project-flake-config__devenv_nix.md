@@ -2,7 +2,7 @@
 title: "Accept per-project flake config"
 author: ["Yejun Su"]
 date: 2025-10-08T23:05:00+08:00
-tags: ["bib", "devenv", "nix"]
+tags: ["devenv", "nix"]
 draft: false
 ---
 
