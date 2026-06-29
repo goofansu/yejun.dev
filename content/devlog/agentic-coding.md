@@ -2,7 +2,7 @@
 title: "Agentic coding"
 author: ["Yejun Su"]
 date: 2025-07-26T11:05:00+08:00
-lastmod: 2026-06-27T19:23:16+08:00
+lastmod: 2026-07-01T13:07:52+08:00
 tags: ["ai"]
 draft: false
 toc: true
@@ -142,14 +142,14 @@ USAGE
   gh ai <command> [flags]
 
 COMMANDS
-  fix [issue-number | gh-issue-list filters...]
-      Fix an issue by number, or select one with fzf
   import <url>
       Inspect a URL and create a GitHub issue
   review [pr-number | gh-pr-list filters...]
       Review a PR by number, or select one with fzf
-  work [pr-number | gh-pr-list filters...]
+  resume [pr-number | gh-pr-list filters...]
       Continue work on a PR by number, or select one with fzf
+  work [issue-number]
+      Work on an issue by number, or select one with fzf
   help
       Show this help
 
@@ -158,20 +158,21 @@ GLOBAL FLAGS
   --prompt PROMPT  Custom prompt template for the agent.
 
 COMMAND FLAGS
-  fix:
-    --base BASE      Branch to start the fix from. Defaults to default branch.
-    --branch BRANCH  Branch to create for the fix. Defaults to issue-<number>.
+  work:
+    --base BASE      Branch to start the work from. Omit to use the default branch.
+    --branch BRANCH  Branch to create for the work. Defaults to issue-<number>.
 
 PROMPT VARIABLES
-  import:      {url}
-  review/work: {pr}
-  fix:         {issue}, {branch}, {base}
+  import: {url}
+  review: {pr}
+  resume: {pr}
+  work:   {issue}
 
 EXAMPLES
-  gh ai fix 123 --prompt 'Fix issue {issue} on {branch} from {base}'
+  gh ai work 123 --prompt 'Work issue {issue}'
   gh ai import https://example.com/ticket/123
   gh ai review 456 --prompt '/review {pr}. Focus on regression risk'
-  gh ai work --author octocat --prompt 'Continue PR {pr}'
+  gh ai resume --author octocat --prompt 'Continue PR {pr}'
 ```
 
 [^fn:1]: Inspired by [Agentic Coding with Claude Code](https://www.youtube.com/live/Y4_YYrIKLac)
