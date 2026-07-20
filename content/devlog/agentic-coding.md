@@ -129,6 +129,9 @@ agent-browser install
 
 ## Workflow {#workflow}
 
+
+### gh-ai extension {#gh-ai-extension}
+
 I delegate work to agents using the [gh-ai extension](https://github.com/goofansu/nix-config/blob/main/scripts/gh-ai.fish) in [gh-dash](https://github.com/goofansu/nix-config/blob/9f350c778863ccb648c6f459729de743d787bc4f/git.nix#L104-L140).
 
 ```text
@@ -173,6 +176,24 @@ EXAMPLES
   gh ai implement 123 --prompt 'Implement issue {issue}'
   gh ai implement --pr 456 --prompt 'Continue PR {pr}'
   gh ai review 456 --prompt '/review {pr}. Focus on regression risk'
+```
+
+
+### Formula {#formula}
+
+The pseudocode for my workflow is as the following:
+
+```ruby
+jira_tickets.each do |ticket|
+  issue = import(ticket)
+  issue = triage(issue)
+
+  worktree = create_worktree(issue)
+  pr = implement(issue, worktree)
+  verify(pr)
+  review(pr)
+  merge(pr)
+end
 ```
 
 [^fn:1]: Inspired by [Agentic Coding with Claude Code](https://www.youtube.com/live/Y4_YYrIKLac)
