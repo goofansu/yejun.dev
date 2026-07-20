@@ -2,7 +2,7 @@
 title: "Agentic coding"
 author: ["Yejun Su"]
 date: 2025-07-26T11:05:00+08:00
-lastmod: 2026-07-01T13:07:52+08:00
+lastmod: 2026-07-21T00:32:45+08:00
 tags: ["ai"]
 draft: false
 toc: true
@@ -94,18 +94,17 @@ Example:
 
 ## Skills {#skills}
 
-I use a combination of [superpowers](https://github.com/obra/superpowers) + 5 skills from [mattpocock/skills](https://github.com/mattpocock/skills) + my own skills:
+I use a combination of [obra/superpowers](https://github.com/obra/superpowers) + [mattpocock/skills](https://github.com/mattpocock/skills) + my own skills:
 
 Superpowers is a methodology enforcing spec -&gt; implementation, and it uses skills according to the scope of tasks, for example:
 
 -   Feature development: brainstorming -&gt; writing-plans -&gt; subagent-driven-development -&gt; verification-before-completion
 -   Bug fixing: systematic-debugging -&gt; test-driven-development
 
-Matt's skills is more like copilot with agent, I chose four skills for supplement:
+Matt's skills is more like copilot with agent:
 
 -   grill-with-docs: it depends on grilling and domain-modeling (from [Domain-Driven Design](https://en.wikipedia.org/wiki/Domain-driven_design))
 -   codebase-design: write good code by designing deep modules (from [A Philosophy Of Software Design](https://web.stanford.edu/~ouster/cgi-bin/aposd.php))
--   triage: I customized the skill and use it as a follow-up after creating a GitHub issue through `gh ai import <url>`
 
 My skills:
 
@@ -130,13 +129,10 @@ agent-browser install
 
 ## Workflow {#workflow}
 
-
-### Delegate work to agents {#delegate-work-to-agents}
-
-I delegate work to agents using a [gh-ai extension](https://github.com/goofansu/nix-config/blob/main/scripts/gh-ai.fish).
+I delegate work to agents using the [gh-ai extension](https://github.com/goofansu/nix-config/blob/main/scripts/gh-ai.fish) in [gh-dash](https://github.com/goofansu/nix-config/blob/9f350c778863ccb648c6f459729de743d787bc4f/git.nix#L104-L140).
 
 ```text
-gh ai - Agent helpers for GitHub issues and pull requests
+gh ai - Agent workflow helpers for GitHub issues and pull requests
 
 USAGE
   gh ai <command> [flags]
@@ -144,35 +140,39 @@ USAGE
 COMMANDS
   import <url>
       Inspect a URL and create a GitHub issue
-  review [pr-number | gh-pr-list filters...]
+  triage [issue-number | gh issue list filters...]
+      Analyze an issue and create or update its implementation plan
+  implement [issue-number | gh issue list filters...]
+      Implement an issue plan by number, or select an issue with fzf
+  implement --pr [pr-number | gh pr list filters...]
+      Continue implementation on a PR by number, or select one with fzf
+  review [pr-number | gh pr list filters...]
       Review a PR by number, or select one with fzf
-  resume [pr-number | gh-pr-list filters...]
-      Continue work on a PR by number, or select one with fzf
-  work [issue-number]
-      Work on an issue by number, or select one with fzf
   help
       Show this help
 
-GLOBAL FLAGS
-  --agent COMMAND  Agent executable to run. Defaults to cx.
+COMMON FLAGS
   --prompt PROMPT  Custom prompt template for the agent.
 
 COMMAND FLAGS
-  work:
-    --base BASE      Branch to start the work from. Omit to use the default branch.
-    --branch BRANCH  Branch to create for the work. Defaults to issue-<number>.
+  implement:
+    --base BASE      Branch to start issue implementation from. Omit to use the default branch.
+    --branch BRANCH  Branch to create for issue implementation. Defaults to issue-<number>-<title-slug>.
+    --pr             Continue implementation from a pull request instead of an issue.
 
 PROMPT VARIABLES
-  import: {url}
-  review: {pr}
-  resume: {pr}
-  work:   {issue}
+  import:        {url}
+  triage:        {issue}
+  implement:     {issue}, {branch}, {base}
+  implement --pr:{pr}
+  review:        {pr}
 
 EXAMPLES
-  gh ai work 123 --prompt 'Work issue {issue}'
   gh ai import https://example.com/ticket/123
+  gh ai triage 123 --prompt 'Triage issue {issue}'
+  gh ai implement 123 --prompt 'Implement issue {issue}'
+  gh ai implement --pr 456 --prompt 'Continue PR {pr}'
   gh ai review 456 --prompt '/review {pr}. Focus on regression risk'
-  gh ai resume --author octocat --prompt 'Continue PR {pr}'
 ```
 
 [^fn:1]: Inspired by [Agentic Coding with Claude Code](https://www.youtube.com/live/Y4_YYrIKLac)
